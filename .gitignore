@@ -1,0 +1,6 @@
+.env
+*.duckdb
+outputs/
+__pycache__/
+.ipynb_checkpoints/
+*.zip
