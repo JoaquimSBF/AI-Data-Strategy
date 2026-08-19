@@ -7,6 +7,7 @@ Materiais do curso **Skills & Go (Alura)** e notebook hands-on de **Data Strateg
 - `Aula1_Fundamentos_IA_Generativa_Alura.pptx` — fundamentos de IA generativa (Aula 1)
 - `Passo_a_passo_API_Key_Google_AI_Studio.pptx` — como criar API Key no Google AI Studio (Gemini)
 - `Passo_a_passo_API_Key_Grok_xAI.pptx` — como criar API Key no Grok (xAI)
+- `Mapa_do_Projeto_Data_AI.pptx` — mapa do projeto Allura Finance (Data & AI)
 
 ## Notebook `Data_AI.ipynb`
 
