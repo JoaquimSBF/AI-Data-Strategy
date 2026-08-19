@@ -1,18 +1,25 @@
-# Allura Finance — Data & AI Strategy
+# AI Data Strategy — Allura Finance
 
-Notebook hands-on de **Data Strategy + IA aplicada** para a Allura Finance.
+Materiais do curso **Skills & Go (Alura)** e notebook hands-on de **Data Strategy + IA aplicada** para a Allura Finance.
 
-## Conteúdo
+## Materiais do curso
 
-- **`Data_AI.ipynb`** — jornada completa da ingestão ao assistente com RAG e guardrails:
-  1. Bronze — upload e inspeção dos dados
-  2. Silver — limpeza, pseudonimização e qualidade
-  3. Modelagem — arquitetura medalhão + estrela
-  4. Gold — DuckDB analítico
-  5. EDA — KPIs de negócio
-  6. RAG — lexical, semântico e híbrido
-  7. Guardrails — Pydantic AI, escopo, PII e evidências
-  8. Aplicação — assistente NL + Streamlit
+- `Aula1_Fundamentos_IA_Generativa_Alura.pptx` — fundamentos de IA generativa (Aula 1)
+- `Passo_a_passo_API_Key_Google_AI_Studio.pptx` — como criar API Key no Google AI Studio (Gemini)
+- `Passo_a_passo_API_Key_Grok_xAI.pptx` — como criar API Key no Grok (xAI)
+
+## Notebook `Data_AI.ipynb`
+
+Jornada completa da ingestão ao assistente com RAG e guardrails:
+
+1. Bronze — upload e inspeção dos dados
+2. Silver — limpeza, pseudonimização e qualidade
+3. Modelagem — arquitetura medalhão + estrela
+4. Gold — DuckDB analítico
+5. EDA — KPIs de negócio
+6. RAG — lexical, semântico e híbrido
+7. Guardrails — Pydantic AI, escopo, PII e evidências
+8. Aplicação — assistente NL + Streamlit
 
 ## Execução local
 
