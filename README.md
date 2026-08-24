@@ -39,3 +39,9 @@ Jornada completa da ingestão ao assistente com RAG e guardrails:
 ## Autor
 
 [JoaquimSBF](https://github.com/JoaquimSBF)
+
+## Harness Engineering (low-code)
+
+Pasta `Harness Engineering/` com prompts (`.md` e `.pdf`), pastas bronze/silver/gold/outputs/rag e CSVs crus em `data/bronze`.
+
+Fluxo: colar prompts no Gemini/GPT e salvar artefatos nas pastas indicadas.
