@@ -1,0 +1,7 @@
+produto_id,produto,categoria,receita_periodo,ativo
+P01,Landing Analytics,SaaS,4200000,sim
+P02,landing analytics,saas,4200000,S
+P03,Pack BI Tradicional,Servico,1800000,sim
+P04,MCP Conectores,Add-on,950000,nao
+P05,Treinamento i18n,Servico,310000,SIM
+P06,White Label HTML,SaaS,2100000,sim

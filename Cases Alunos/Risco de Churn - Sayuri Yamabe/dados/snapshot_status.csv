@@ -1,0 +1,13 @@
+cliente_id,status,data_snapshot,observacao
+C001,ativo,2025-07-15,
+C002,ativo,2025-07-15,downgrade recente
+C003,inativo,2025-07-15,sem data de saida
+C004,ativo,2025-07-15,
+C005,inativo,2025-07-15,sem data de saida
+C006,inativo,2025-07-15,sem data de saida
+C007,inativo,2025-07-15,sem data de saida
+C008,ativo,2025-07-15,
+C009,ativo,2025-07-15,downgrade
+C010,inativo,2025-07-15,sem data de saida
+C012,ativo,2025-07-15,
+C002,Ativo,15/07/2025,linha duplicada status misto

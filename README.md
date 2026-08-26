@@ -53,3 +53,11 @@ O Streamlit não abre de dentro do Colab/Jupyter. Sem a chave Gemini, o app aind
 Pasta `Harness Engineering/` com prompts (`.md` e `.pdf`), pastas bronze/silver/gold/outputs/rag e CSVs crus em `data/bronze`.
 
 Fluxo: colar prompts no Gemini/GPT e salvar artefatos nas pastas indicadas.
+
+## Cases dos alunos (prompt a prompt até o produto)
+
+Pasta `Cases Alunos/`. Jornada igual à Allura (um prompt por vez). O final é um HTML (`produto/index.html`).
+
+Prompts em cada case: `prompts/md/` (fonte) e `prompts/pdf/` (turma), com `Prompts_Completo.pdf` no mesmo estilo da Allura.
+
+Índice: `Cases Alunos/README.md`.

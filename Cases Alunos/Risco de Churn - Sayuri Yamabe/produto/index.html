@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar de risco — Nexo Assinaturas</title>
+<style>
+  :root { --bg:#f3efe8; --ink:#1a1714; --line:#d4cdc2; --alto:#8b1e1e; --medio:#8a5a12; --baixo:#2d5a3d; --card:#fffcf7; }
+  * { box-sizing:border-box; }
+  body { margin:0; font:15px/1.45 "Segoe UI", system-ui, sans-serif; background:var(--bg); color:var(--ink); }
+  header { padding:1.2rem 1.5rem; border-bottom:1px solid var(--line); background:var(--card); }
+  header h1 { margin:0; font-size:1.3rem; }
+  header p { margin:.35rem 0 0; color:#5e584f; max-width:46rem; }
+  .warn { background:#f4e4c8; border-bottom:1px solid var(--line); padding:.7rem 1.5rem; font-size:.9rem; }
+  .bar { display:flex; flex-wrap:wrap; gap:.5rem; padding:.8rem 1.5rem; align-items:center; border-bottom:1px solid var(--line); }
+  button { font:inherit; border:1px solid var(--ink); background:var(--ink); color:var(--bg); padding:.35rem .65rem; cursor:pointer; }
+  .layout { display:grid; grid-template-columns: 1fr 320px; min-height:70vh; }
+  @media (max-width:900px){ .layout { grid-template-columns:1fr; } }
+  table { width:100%; border-collapse:collapse; }
+  th, td { text-align:left; padding:.55rem .8rem; border-bottom:1px solid var(--line); }
+  tr { cursor:pointer; }
+  tr.on { background:#efe6d6; }
+  .b { font-size:.7rem; text-transform:uppercase; letter-spacing:.06em; border:1px solid currentColor; padding:.05rem .35rem; }
+  .alto { color:var(--alto); } .medio { color:var(--medio); } .baixo { color:var(--baixo); }
+  aside { border-left:1px solid var(--line); padding:1rem; background:var(--card); }
+  ul { padding-left:1.1rem; }
+  .kpis { display:flex; gap:1.5rem; padding:1rem 1.5rem; }
+  .kpis b { display:block; font-size:1.4rem; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Radar de risco · Nexo Assinaturas</h1>
+  <p>Sayuri Yamabe — lista priorizada com <strong>sinais</strong> (status, ticket, downgrade, cancelamento). Isto não é probabilidade de churn nem modelo treinado.</p>
+</header>
+<div class="warn" id="buraco">Snapshot sem data de saída: taxa de churn do período = sem evidência. Código/ML faria o treino; este produto não inventa %.</div>
+<div class="bar">
+  <input id="files" type="file" accept=".csv,.json" multiple>
+  <button type="button" id="btnPrompt">Copiar para o Gemini</button>
+  <button type="button" id="btnReset">Amostra</button>
+  <span id="fonte">amostra embutida</span>
+</div>
+<div class="kpis" id="kpis"></div>
+<div class="layout">
+  <table>
+    <thead><tr><th>Cliente</th><th>Plano</th><th>Status</th><th>Sinais</th><th>Faixa</th></tr></thead>
+    <tbody id="tbody"></tbody>
+  </table>
+  <aside id="detalhe"><p>Clique numa linha para ver a evidência.</p></aside>
+</div>
+<script>
+const CLIENTES0 = [
+  {id:"C001", nome:"C001", plano:"pro", status:"ativo"},
+  {id:"C002", nome:"C002", plano:"pro", status:"ativo"},
+  {id:"C003", nome:"C003", plano:"basic", status:"inativo"},
+  {id:"C004", nome:"C004", plano:"pro", status:"ativo"},
+  {id:"C005", nome:"C005", plano:"basic", status:"inativo"},
+  {id:"C006", nome:"C006", plano:"pro", status:"inativo"},
+  {id:"C007", nome:"C007", plano:"basic", status:"inativo"},
+  {id:"C008", nome:"C008", plano:"pro", status:"ativo"},
+  {id:"C009", nome:"C009", plano:"basic", status:"ativo"},
+  {id:"C010", nome:"C010", plano:"pro", status:"inativo"},
+  {id:"C012", nome:"C012", plano:"basic", status:"ativo"}
+];
+const EVENTOS0 = [
+  {id:"E001", cliente:"C001", data:"2025-05-02", tipo:"login", detalhe:"ok"},
+  {id:"E002", cliente:"C001", data:"2025-06-18", tipo:"login", detalhe:"ok"},
+  {id:"E003", cliente:"C002", data:"2025-05-10", tipo:"ticket", detalhe:"cobranca duplicada"},
+  {id:"E004", cliente:"C002", data:"2025-06-01", tipo:"ticket", detalhe:"cobranca duplicada"},
+  {id:"E005", cliente:"C002", data:"2025-06-20", tipo:"downgrade", detalhe:"pro para basic"},
+  {id:"E006", cliente:"C003", data:"2025-04-22", tipo:"ticket", detalhe:"nao usa mais o modulo"},
+  {id:"E007", cliente:"C004", data:"2025-05-15", tipo:"login", detalhe:"ok"},
+  {id:"E008", cliente:"C004", data:"2025-07-02", tipo:"login", detalhe:"ok"},
+  {id:"E009", cliente:"C005", data:"2025-05-03", tipo:"cancelamento_solicitado", detalhe:"pedido no chat"},
+  {id:"E010", cliente:"C006", data:"2025-05-30", tipo:"ticket", detalhe:"renovacao inercia"},
+  {id:"E011", cliente:"C007", data:"2025-06-11", tipo:"login", detalhe:"ultimo login conhecido"},
+  {id:"E012", cliente:"C008", data:"2025-06-08", tipo:"login", detalhe:"ok"},
+  {id:"E013", cliente:"C008", data:"2025-07-01", tipo:"ticket", detalhe:"duvida de relatorio"},
+  {id:"E014", cliente:"C009", data:"2025-06-25", tipo:"downgrade", detalhe:"basic para free"},
+  {id:"E015", cliente:"C010", data:"2025-03-01", tipo:"ticket", detalhe:"ameaca de cancelar"},
+  {id:"E018", cliente:"C012", data:"2025-07-10", tipo:"login", detalhe:"ok"}
+];
+let clientes = CLIENTES0.map(c => ({...c}));
+let eventos = EVENTOS0.map(e => ({...e}));
+let overlay = {};
+let sel = null;
+
+function evDo(id) { return eventos.filter(e => e.cliente === id); }
+function score(c) {
+  if (overlay[c.id] && overlay[c.id].faixa) return overlay[c.id];
+  const ev = evDo(c.id);
+  const tipos = ev.map(e => e.tipo);
+  const sinais = [];
+  let n = 0;
+  if (c.status === "inativo") { sinais.push("inativo no snapshot"); n += 3; }
+  if (tipos.includes("cancelamento_solicitado")) { sinais.push("pediu cancelamento"); n += 3; }
+  if (tipos.includes("downgrade")) { sinais.push("downgrade"); n += 2; }
+  const tickets = tipos.filter(t => t === "ticket").length;
+  if (tickets >= 2) { sinais.push(tickets + " tickets"); n += 2; }
+  else if (tickets === 1) { sinais.push("1 ticket"); n += 1; }
+  if (n >= 3) return { faixa:"alto", pontos:n, sinais };
+  if (n >= 1) return { faixa:"medio", pontos:n, sinais };
+  return { faixa:"baixo", pontos:n, sinais: sinais.length ? sinais : ["sem sinal negativo"] };
+}
+
+function render() {
+  const rows = clientes.map(c => ({c, s: score(c)})).sort((a,b) => b.s.pontos - a.s.pontos);
+  const nAlto = rows.filter(r => r.s.faixa === "alto").length;
+  const nInat = clientes.filter(c => c.status === "inativo").length;
+  document.getElementById("kpis").innerHTML = `
+    <div><b>${clientes.length}</b><span>clientes no radar</span></div>
+    <div><b>${nInat}</b><span>inativos (snapshot)</span></div>
+    <div><b>${nAlto}</b><span>faixa alta (sinais)</span></div>
+    <div><b>—</b><span>churn % no período</span></div>`;
+  document.getElementById("tbody").innerHTML = rows.map(({c,s}) => `
+    <tr data-id="${c.id}" class="${sel===c.id?"on":""}">
+      <td>${c.id}</td><td>${c.plano}</td><td>${c.status}</td>
+      <td>${s.sinais.join(" · ")}</td>
+      <td><span class="b ${s.faixa}">${s.faixa}</span></td>
+    </tr>`).join("");
+  const c = clientes.find(x => x.id === sel);
+  if (!c) return;
+  const s = score(c);
+  const ev = evDo(c.id);
+  document.getElementById("detalhe").innerHTML = `
+    <h2>${c.id}</h2>
+    <p><span class="b ${s.faixa}">${s.faixa}</span> · ${s.pontos} pontos de sinal (não é probabilidade)</p>
+    <p>${(overlay[c.id] && overlay[c.id].porque) || "Evidência só dos eventos abaixo."}</p>
+    <h3>Eventos</h3>
+    <ul>${ev.length ? ev.map(e => `<li>${e.data} · ${e.tipo} — ${e.detalhe}</li>`).join("") : "<li>sem eventos</li>"}</ul>
+    <p style="color:#5e584f;font-size:.85rem">Sem data de churn neste cliente. Não dá para treinar previsão neste HTML.</p>`;
+}
+
+document.getElementById("tbody").onclick = e => {
+  const tr = e.target.closest("tr[data-id]");
+  if (!tr) return;
+  sel = tr.dataset.id;
+  render();
+};
+
+document.getElementById("btnReset").onclick = () => {
+  clientes = CLIENTES0.map(c => ({...c}));
+  eventos = EVENTOS0.map(e => ({...e}));
+  overlay = {};
+  document.getElementById("fonte").textContent = "amostra embutida";
+  sel = clientes[0].id;
+  render();
+};
+
+document.getElementById("btnPrompt").onclick = async () => {
+  const lista = clientes.map(c => ({id:c.id, status:c.status, ...score(c), eventos: evDo(c.id)}));
+  const texto = `Voce e analista da Nexo Assinaturas. NAO invente % de churn nem acuracia de modelo.
+Devolva SOMENTE JSON: {"fichas":[{"id":"C002","faixa":"alto|medio|baixo","porque":"1 frase com evidencia"}]}
+Contexto (sinais ja calculados no produto):
+${JSON.stringify(lista, null, 2)}`;
+  try { await navigator.clipboard.writeText(texto); }
+  catch { window.prompt("Copie o prompt (Ctrl+C):", texto); }
+  document.getElementById("fonte").textContent = "Prompt copiado";
+  const raw = window.prompt("Cole o JSON do Gemini (Cancelar ignora):");
+  if (!raw) return;
+  try {
+    const data = JSON.parse(raw.replace(/```json|```/g,"").trim());
+    (data.fichas || []).forEach(f => { overlay[f.id] = f; });
+    render();
+  } catch { alert("JSON inválido"); }
+};
+
+function parseCSV(text) {
+  const rows = []; let row = [], cell = "", q = false;
+  const src = String(text).replace(/^\uFEFF/, "").replace(/\r\n/g,"\n").replace(/\r/g,"\n");
+  for (let i = 0; i < src.length; i++) {
+    const c = src[i], n = src[i+1];
+    if (q) { if (c === '"' && n === '"') { cell += '"'; i++; } else if (c === '"') q = false; else cell += c; }
+    else if (c === '"') q = true;
+    else if (c === ",") { row.push(cell); cell = ""; }
+    else if (c === "\n") { row.push(cell); rows.push(row); row = []; cell = ""; }
+    else cell += c;
+  }
+  if (cell.length || row.length) { row.push(cell); rows.push(row); }
+  const h = (rows[0] || []).map(x => String(x).trim());
+  return rows.slice(1).filter(r => r.some(x => String(x).trim())).map(r => {
+    const o = {}; h.forEach((k,i) => o[k] = String(r[i]||"").trim()); return o;
+  });
+}
+function statusCanon(s) {
+  s = String(s||"").toLowerCase();
+  if (s === "a" || s === "ativo") return "ativo";
+  if (s === "i" || s === "inativo") return "inativo";
+  return s;
+}
+
+document.getElementById("files").onchange = async e => {
+  for (const f of [...e.target.files]) {
+    const rows = parseCSV(await f.text());
+    if (!rows[0]) continue;
+    if ("tipo" in rows[0] && "evento_id" in rows[0]) {
+      eventos = rows.filter(r => r.cliente_id && r.tipo && r.data && !/40$/.test(r.data)).map(r => ({
+        id:r.evento_id, cliente:r.cliente_id, data:r.data, tipo:r.tipo, detalhe:r.detalhe
+      }));
+    } else if ("data_snapshot" in rows[0] || ("status" in rows[0] && "observacao" in rows[0])) {
+      const seen = new Set();
+      rows.forEach(r => {
+        if (!r.cliente_id || seen.has(r.cliente_id)) return;
+        seen.add(r.cliente_id);
+        const c = clientes.find(x => x.id === r.cliente_id);
+        if (c) c.status = statusCanon(r.status);
+        else clientes.push({id:r.cliente_id, nome:r.cliente_id, plano:"—", status:statusCanon(r.status)});
+      });
+    } else if ("cliente_id" in rows[0] && "plano" in rows[0]) {
+      const seen = new Set();
+      clientes = [];
+      rows.forEach(r => {
+        if (!r.cliente_id || seen.has(r.cliente_id)) return;
+        seen.add(r.cliente_id);
+        clientes.push({id:r.cliente_id, nome:r.cliente_id, plano:r.plano, status:statusCanon(r.status)});
+      });
+    }
+  }
+  document.getElementById("fonte").textContent = "CSV local (PII não é exibida — só IDs)";
+  render();
+};
+
+sel = "C002";
+render();
+</script>
+</body>
+</html>

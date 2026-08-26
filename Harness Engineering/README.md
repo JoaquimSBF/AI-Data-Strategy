@@ -36,6 +36,8 @@ Harness Engineering/
 O chat nao grava sozinho no disco. Este harness define o contrato:
 prompt -> artefato -> pasta.
 
+Cases da turma (outra logica, HTML sem instalar): pasta `../Cases Alunos/`.
+
 ## Formatos
 
 - `prompts/*.md` → fonte editavel (Cursor / Git)
