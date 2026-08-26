@@ -1,0 +1,41 @@
+cliente_id,nome,segmento,status,data_entrada
+C001,Karen Santos,Private,ativo,2023-08-12
+C002,Iris Rodrigues,Private,ativo,2024-03-08
+C003,Elena Oliveira,Private,inativo,2024-04-15
+C004,Bruno Costa,Alta Renda,ativo,2023-08-27
+C005,Gabriela Lima,Varejo,inativo,2023-06-25
+C006,Lucas Souza,Alta Renda,inativo,2023-10-02
+C007,Diego Rodrigues,Varejo,inativo,2023-09-27
+C008,Joao Costa,Private,ativo,2023-06-06
+C009,Carla Costa,Varejo,ativo,2023-12-15
+C010,Elena Costa,Alta Renda,inativo,2024-06-03
+C011,Diego Oliveira,Alta Renda,ativo,2023-03-01
+C012,Olivia Rodrigues,Private,inativo,2023-06-19
+C013,Iris Rodrigues,Private,ativo,2023-01-22
+C014,Iris Souza,Private,inativo,2023-09-01
+C015,Karen Almeida,Private,ativo,2024-03-17
+C016,Gabriela Costa,Varejo,inativo,2024-04-04
+C017,Gabriela Oliveira,Private,ativo,2023-06-20
+C018,Hugo Almeida,Varejo,inativo,2024-05-13
+C019,Diego Lima,Private,inativo,2023-03-24
+C020,Bruno Rodrigues,Alta Renda,ativo,2023-11-18
+C021,Elena Costa,Varejo,ativo,2024-06-02
+C022,Carla Pereira,Varejo,inativo,2024-06-25
+C023,Karen Nascimento,Varejo,ativo,2023-12-18
+C024,Karen Lima,Alta Renda,ativo,2023-09-26
+C025,Lucas Almeida,Varejo,inativo,2023-06-01
+C026,Carla Silva,Varejo,inativo,2023-06-08
+C027,Nicolas Oliveira,Varejo,inativo,2023-04-21
+C028,Nicolas Silva,Private,inativo,2023-07-17
+C029,Felipe Lima,Private,ativo,2023-07-02
+C030,Elena Silva,Varejo,ativo,2023-09-18
+C031,Lucas Costa,Alta Renda,inativo,2023-11-13
+C032,Gabriela Pereira,Varejo,ativo,2023-11-08
+C033,Diego Costa,Varejo,inativo,2023-03-28
+C034,Iris Rodrigues,Private,ativo,2024-05-01
+C035,Nicolas Santos,Private,ativo,2024-03-11
+C036,Carla Nascimento,Private,inativo,2024-05-31
+C037,Nicolas Nascimento,Alta Renda,inativo,2023-03-21
+C038,Elena Souza,Varejo,inativo,2023-08-08
+C039,Gabriela Costa,Varejo,inativo,2024-05-03
+C040,Felipe Lima,Private,inativo,2023-01-30

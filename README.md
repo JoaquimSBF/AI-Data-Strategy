@@ -25,9 +25,17 @@ Jornada completa da ingestão ao assistente com RAG e guardrails:
 ## Execução local
 
 1. Clone o repositório
-2. Coloque os CSVs em `data/bronze/` (movimentacoes, clientes, produtos, receita, metas)
-3. Crie um `.env` com `GEMINI_API_KEY=sua_chave`
-4. Abra e execute `Data_AI.ipynb`
+2. Crie um `.env` na pasta do clone (copie de `.env.example`) com `GEMINI_API_KEY=sua_chave`
+3. Abra e execute `Data_AI.ipynb`
+4. Para o front Streamlit, **fora do notebook**:
+
+```bat
+python -m pip install -r requirements.txt
+python -m streamlit run app\streamlit_app.py
+```
+
+O Streamlit não abre de dentro do Colab/Jupyter. Sem a chave Gemini, o app ainda sobe e responde com evidência lexical (TF-IDF).
+
 
 > Todos os dados do caso são **100% sintéticos** e não representam informações reais da Allura Finance.
 

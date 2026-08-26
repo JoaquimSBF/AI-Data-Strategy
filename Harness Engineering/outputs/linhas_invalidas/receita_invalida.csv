@@ -1,0 +1,3 @@
+periodo,produto,canal,fee,valor_receita,ano_mes,valor_n,motivo
+2025/03,,Assessor,corretagem,"65559,14",2025-03,65559.14,produto_inexistente;
+2025-05,Fundo DI,Assessor,admin,,2025-05,,valor_invalido;

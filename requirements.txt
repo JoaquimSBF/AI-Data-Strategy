@@ -1,0 +1,9 @@
+duckdb
+plotly
+scikit-learn
+python-dotenv
+google-genai
+pydantic-ai-slim[google]
+streamlit
+pandas
+numpy
