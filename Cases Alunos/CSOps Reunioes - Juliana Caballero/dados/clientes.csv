@@ -1,0 +1,9 @@
+cliente_id,loja,nome_contato,email,telefone,segmento,status,data_cadastro
+L001,Loja Moema,Carla Mendes,carla.mendes@lojamail.com,11987654321,Premium,ativo,2023-04-12
+L002,Loja Pinheiros,Rafael Dias,RAFAEL.DIAS@EMAIL.COM,(11) 98888-1234,padrao,A,12/08/2023
+L003,Loja Centro,Ana Souza,ana.souza3@email.com,+55 11 97777-2222,Premium,ativo,2024/01/05
+L004,Loja Moema,Carla Mendes,carla.mendes@lojamail.com,11987654321,Premium,Ativo,2023-04-12
+L005,Loja Tatuape,Bruno Lima,bruno.lima5@email.com,11911112222,VAREJO,I,15/03/2024
+L006,Loja Santana,Fernanda Costa,fernanda.costa6@email.com,(11) 95555-0001,padrao,inativo,2023-11-20
+L007,Loja Moema Sul,Diego Alves,diego.alves7@email.com,11933334444,Premium,ativo,2024-02-02
+L008,Loja Lapa,Patricia Nunes,patricia.nunes8@email.com,11922223333,varejo,ok,2023/09/09

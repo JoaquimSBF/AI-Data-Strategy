@@ -1,0 +1,16 @@
+{
+  "docs": [
+    {
+      "id": "analise_final",
+      "path": "outputs/analise_final.md"
+    },
+    {
+      "id": "kpis_mensais",
+      "path": "data/gold/kpis_mensais.csv"
+    },
+    {
+      "id": "metas",
+      "path": "data/silver/metas.csv"
+    }
+  ]
+}

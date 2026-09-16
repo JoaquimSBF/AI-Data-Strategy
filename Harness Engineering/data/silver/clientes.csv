@@ -1,0 +1,41 @@
+cliente_id,nome,cpf_hash,email_hash,telefone_hash,segmento,status,data_entrada
+C001,Karen Santos,cpf_e0f35a560886,mail_8f939d3db7f6,tel_019b7a76aff3,Private,ativo,2023-08-12
+C002,Iris Rodrigues,cpf_4cc8bacc212a,mail_976eee39f148,tel_8a277fea031a,Private,ativo,2024-03-08
+C003,Elena Oliveira,cpf_db791c5a44a6,mail_01d2935cc524,tel_033af46ff57b,Private,inativo,2024-04-15
+C004,Bruno Costa,cpf_41a1b0080870,mail_7ca098d39c4d,tel_267e64b44002,Alta Renda,ativo,2023-08-27
+C005,Gabriela Lima,cpf_d804f467d0bd,mail_66751b202e53,tel_8c4f3b5a669b,Varejo,inativo,2023-06-25
+C006,Lucas Souza,cpf_169d9dbb3a89,mail_66751b202e53,tel_ec59b85f59ae,Alta Renda,inativo,2023-10-02
+C007,Diego Rodrigues,cpf_a1356b87b280,mail_a1c5ecabfdf6,tel_77226d01efb3,Varejo,inativo,2023-09-27
+C008,Joao Costa,cpf_dbad2d9e551f,mail_c7de2b613fc2,tel_58051f6f0ca4,Private,ativo,2023-06-06
+C009,Carla Costa,cpf_204d72191212,mail_9bb5ba281f68,tel_baf715cab3ee,Varejo,ativo,2023-12-15
+C010,Elena Costa,cpf_43815f0c317e,mail_9d9e3572ba4f,tel_bc6367ca1d5c,Alta Renda,inativo,2024-06-03
+C011,Diego Oliveira,cpf_0f3dae9a1e88,mail_08fecb47ce6b,tel_39fabf8dd827,Alta Renda,ativo,2023-03-01
+C012,Olivia Rodrigues,cpf_7e70159bddf4,mail_1be5baff8a09,tel_6c6fdf00ba6f,Private,inativo,2023-06-19
+C013,Iris Rodrigues,cpf_d7ef5f02a2c7,mail_aecd6e6dea5f,tel_ff90c3acab40,Private,ativo,2023-01-22
+C014,Iris Souza,cpf_f38150a6db4b,mail_108b83a76bd9,tel_9586d2172dbf,Private,inativo,2023-09-01
+C015,Karen Almeida,cpf_60055c207912,mail_98314a37d6a3,tel_e846d55443e0,Private,ativo,2024-03-17
+C016,Gabriela Costa,cpf_7630b493a8c8,mail_b69a1b57b2a0,tel_6c443af7e3d7,Varejo,inativo,2024-04-04
+C017,Gabriela Oliveira,cpf_9929d687ae03,mail_8b3d9d0610c5,tel_8393896cd0ee,Private,ativo,2023-06-20
+C018,Hugo Almeida,cpf_bb41193fce74,mail_208f5ec11544,,Varejo,inativo,2024-05-13
+C019,Diego Lima,cpf_baea7afac3b7,mail_f977607dde14,tel_722f12b4cbd7,Private,inativo,2023-03-24
+C020,Bruno Rodrigues,cpf_417c757980a4,mail_60bfbc663dc5,tel_c137b9a8fb9c,Alta Renda,ativo,2023-11-18
+C021,Elena Costa,cpf_502d38178bf1,mail_b7f24fab8391,tel_a0f98f45eac1,Varejo,ativo,2024-06-02
+C022,Carla Pereira,cpf_e9778a6fc38d,mail_c5154ddd1eed,tel_3839f47f0581,Varejo,inativo,2024-06-25
+C023,Karen Nascimento,cpf_8371956340bf,mail_955f51319b06,tel_dbf5c57d56bb,Varejo,ativo,2023-12-18
+C024,Karen Lima,cpf_09109a372c1e,mail_0099f9373aba,tel_7d6f93516da7,Alta Renda,ativo,2023-09-26
+C025,Lucas Almeida,cpf_13817cd0b18b,mail_73be877fcdf5,tel_4bf37c32fe98,Varejo,inativo,2023-06-01
+C026,Carla Silva,cpf_5ed2fc6cc509,mail_6679020f8bab,,Varejo,inativo,2023-06-08
+C027,Nicolas Oliveira,cpf_934032dce314,mail_44b1fbcfe3d8,tel_5d9a09c23f5b,Varejo,inativo,2023-04-21
+C028,Nicolas Silva,cpf_777a4856df15,mail_d126ad73051e,tel_007d5a4a99d1,Private,inativo,2023-07-17
+C029,Felipe Lima,cpf_a6a76ad6a068,mail_cf8bd6840452,tel_63b23ce768f8,Private,ativo,2023-07-02
+C030,Elena Silva,cpf_b160d4c2e017,mail_47119e3979d4,,Varejo,ativo,2023-09-18
+C031,Lucas Costa,cpf_f2e98ac7b658,mail_4adeae28255b,tel_c48767cba19d,Alta Renda,inativo,2023-11-13
+C032,Gabriela Pereira,cpf_c12288a7a273,mail_6e861442c9fb,,Varejo,ativo,2023-11-08
+C033,Diego Costa,cpf_f59bd7d28e56,mail_67ecdfa96e8c,,Varejo,inativo,2023-03-28
+C034,Iris Rodrigues,cpf_e6b604db48e7,mail_825ed53a15f7,tel_dd9977ab9853,Private,ativo,2024-05-01
+C035,Nicolas Santos,cpf_06cce6f06be8,mail_5d953a78d0b5,tel_dc5fc01eb5d2,Private,ativo,2024-03-11
+C036,Carla Nascimento,cpf_f89e1983dab0,mail_0a9b56d40db8,tel_8117b726714c,Private,inativo,2024-05-31
+C037,Nicolas Nascimento,cpf_c3c436f1904c,mail_ace83cd511aa,tel_f6bfe41ad5ee,Alta Renda,inativo,2023-03-21
+C038,Elena Souza,cpf_61f85b354c70,mail_3630ad0fb3a7,,Varejo,inativo,2023-08-08
+C039,Gabriela Costa,cpf_d87b74ad1b28,mail_0c596be85af2,tel_cb6ff76bd8c6,Varejo,inativo,2024-05-03
+C040,Felipe Lima,cpf_75434485b00f,mail_5e536e48808c,tel_1c23e4de9faa,Private,inativo,2023-01-30
