@@ -4,3 +4,6 @@ outputs/
 __pycache__/
 .ipynb_checkpoints/
 *.zip
+*.rar
+Data_AI_executed.ipynb
+~$*
