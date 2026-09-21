@@ -1,444 +1,73 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Board Pack · Allura Finance · Jan–Jul 2025</title>
-  <style>
-    :root {
-      --ink: #0f1c2e;
-      --ink-soft: #3d4f66;
-      --paper: #f6f3ec;
-      --card: #fffcf7;
-      --line: #d9d0c3;
-      --navy: #12324d;
-      --gold: #b0893e;
-      --gold-soft: #ead9b2;
-      --up: #1f7a54;
-      --down: #b42318;
-      --warn: #9a6700;
-      --ok: #17635a;
-      --shadow: 0 10px 30px rgba(18, 50, 77, 0.08);
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Calibri, "Helvetica Neue", Arial, sans-serif;
-      color: var(--ink);
-      background:
-        radial-gradient(1200px 500px at 10% -10%, #ead9b233, transparent 50%),
-        linear-gradient(180deg, #ece7dc 0%, var(--paper) 180px);
-      line-height: 1.5;
-    }
-    .wrap { max-width: 1120px; margin: 0 auto; padding: 28px 22px 80px; }
-    header.hero {
-      background: linear-gradient(135deg, #0d2236 0%, #18415f 58%, #1d4d68 100%);
-      color: #f7f1e4;
-      border-radius: 18px;
-      padding: 36px 36px 28px;
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-    }
-    header.hero::after {
-      content: "";
-      position: absolute;
-      right: -40px; top: -40px;
-      width: 220px; height: 220px;
-      border-radius: 50%;
-      background: #b0893e22;
-    }
-    .kicker {
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      font-size: 11px;
-      color: var(--gold-soft);
-      font-weight: 600;
-    }
-    h1 { margin: 8px 0 6px; font-size: 32px; font-weight: 650; letter-spacing: -0.03em; }
-    .meta { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 14px; font-size: 14px; color: #d7e3ee; }
-    .badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: #1f7a54;
-      color: white;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: .04em;
-      padding: 6px 12px;
-      border-radius: 999px;
-    }
-    nav.toc {
-      display: flex; flex-wrap: wrap; gap: 8px;
-      margin: 18px 0 0;
-    }
-    nav.toc a {
-      color: #f7f1e4; text-decoration: none; font-size: 12px;
-      border: 1px solid #ffffff33; padding: 6px 10px; border-radius: 999px;
-    }
-    nav.toc a:hover { background: #ffffff18; }
-    .disclaimer {
-      margin-top: 16px; font-size: 12px; color: #c9d6e2; max-width: 78ch;
-    }
-    .kpis {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-      margin: 22px 0 10px;
-    }
-    .kpi {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 16px 16px 14px;
-      box-shadow: var(--shadow);
-    }
-    .kpi .label { font-size: 12px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: .08em; font-weight: 700; }
-    .kpi .value { font-size: 22px; font-weight: 700; margin: 6px 0 4px; letter-spacing: -0.03em; }
-    .kpi .hint { font-size: 12px; color: var(--ink-soft); }
-    .neg { color: var(--down); }
-    .pos { color: var(--up); }
-    .neu { color: var(--navy); }
-    section {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 26px 28px;
-      margin-top: 16px;
-      box-shadow: var(--shadow);
-    }
-    h2 {
-      margin: 0 0 14px;
-      font-size: 20px;
-      color: var(--navy);
-      letter-spacing: -0.02em;
-      display: flex; align-items: baseline; gap: 10px;
-    }
-    h2 span.num {
-      color: var(--gold); font-size: 13px; letter-spacing: .12em; font-weight: 800;
-    }
-    h3 { margin: 18px 0 8px; font-size: 15px; color: var(--navy); }
-    p { margin: 0 0 10px; color: #243246; }
-    .src { font-size: 11px; color: #6b7c8f; }
-    table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin: 8px 0 12px; }
-    th, td { padding: 9px 10px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
-    th { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); background: #f4efe6; }
-    tr:last-child td { border-bottom: 0; }
-    td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
-    .pill {
-      display: inline-block; padding: 2px 8px; border-radius: 999px;
-      font-size: 11px; font-weight: 700;
-    }
-    .pill.bad { background: #fde8e6; color: var(--down); }
-    .pill.good { background: #e5f6ef; color: var(--up); }
-    .pill.warn { background: #fff4d6; color: var(--warn); }
-    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .callout {
-      border-left: 4px solid var(--gold);
-      background: #faf6ee;
-      padding: 12px 14px;
-      border-radius: 0 10px 10px 0;
-      margin: 12px 0;
-    }
-    .alert-down {
-      border-left-color: var(--down);
-      background: #fdf2f1;
-    }
-    .alert-ok {
-      border-left-color: var(--ok);
-      background: #eef8f5;
-    }
-    .alert-warn {
-      border-left-color: var(--warn);
-      background: #fff8e8;
-    }
-    .bars { display: grid; gap: 8px; margin: 12px 0 4px; }
-    .bar-row { display: grid; grid-template-columns: 88px 1fr 130px; gap: 10px; align-items: center; font-size: 13px; }
-    .track { height: 12px; background: #efe8da; border-radius: 99px; overflow: hidden; position: relative; }
-    .fill { height: 100%; border-radius: 99px; }
-    .fill.up { background: linear-gradient(90deg, #2e9a6f, #1f7a54); }
-    .fill.down { background: linear-gradient(90deg, #d4544a, #b42318); }
-    .months {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      gap: 8px;
-      margin: 16px 0 6px;
-    }
-    .month {
-      background: #f4efe6;
-      border-radius: 12px;
-      padding: 10px 8px 12px;
-      text-align: center;
-    }
-    .month .m { font-size: 11px; font-weight: 700; color: var(--ink-soft); letter-spacing: .06em; }
-    .month .v { font-size: 12px; font-weight: 700; margin-top: 6px; font-variant-numeric: tabular-nums; }
-    .col {
-      width: 18px; margin: 8px auto 0; height: 72px;
-      background: #e4ddd0; border-radius: 6px; position: relative; overflow: hidden;
-    }
-    .col i {
-      position: absolute; left: 0; right: 0; bottom: 50%;
-      display: block;
-    }
-    ol.recs { padding-left: 18px; }
-    ol.recs li { margin: 8px 0; }
-    footer {
-      margin-top: 22px; color: var(--ink-soft); font-size: 12px; text-align: center;
-    }
-    @media (max-width: 900px) {
-      .kpis, .split, .months { grid-template-columns: 1fr 1fr; }
-      .bar-row { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 640px) {
-      .kpis, .months { grid-template-columns: 1fr; }
-      header.hero, section { padding: 20px; }
-    }
-    @media print {
-      body { background: white; }
-      .wrap { padding: 0; }
-      section, header.hero, .kpi { box-shadow: none; break-inside: avoid; }
-      nav.toc { display: none; }
-    }
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <header class="hero">
-      <div class="kicker">Allura Finance · Documento para diretoria</div>
-      <h1>Board Pack comercial</h1>
-      <p style="margin:0;max-width:62ch;color:#e4edf5;">Resultado de captação, resgate, receita e mix · janeiro a julho de 2025</p>
-      <div class="meta">
-        <span>Público: Diretoria</span>
-        <span>Período: jan–jul 2025 (7 meses)</span>
-        <span>Dados sintéticos didáticos</span>
-        <span class="badge">Pronto para Board Pack · SIM</span>
-      </div>
-      <p class="disclaimer">Sem PII. Sem recomendação de investimento. Cada número tem fonte na análise e nos KPIs/receita do período.</p>
-      <nav class="toc">
-        <a href="#resumo">1. Resumo</a>
-        <a href="#kpis">2. KPIs vs meta</a>
-        <a href="#movimento">3. Subiu / caiu</a>
-        <a href="#mix">4. Mix</a>
-        <a href="#alertas">5. Receita e churn</a>
-        <a href="#recs">6. Recomendações</a>
-        <a href="#limites">7. Limites</a>
-        <a href="#fontes">8. Fontes</a>
-      </nav>
-    </header>
+<!DOCTYPE html><html lang='pt-BR'><head><meta charset='utf-8'><title>Board Pack — Allura Finance</title><style>body{font-family:Inter,Arial,sans-serif;max-width:900px;margin:2rem auto;line-height:1.5;color:#111827}h1,h2{color:#0f766e}table{border-collapse:collapse;width:100%;margin:1rem 0}th,td{border:1px solid #e5e7eb;padding:8px;text-align:left}th{background:#f8fafc}</style></head><body><pre style='white-space:pre-wrap;font-family:inherit'># Board Pack — Allura Finance
 
-    <div class="kpis">
-      <article class="kpi">
-        <div class="label">Captação líquida do período</div>
-        <div class="value neg">R$ -573.390</div>
-        <div class="hint">Captação 3,28 mi · Resgate 3,85 mi</div>
-      </article>
-      <article class="kpi">
-        <div class="label">Captação média / mês</div>
-        <div class="value neg">R$ 468 mil</div>
-        <div class="hint">Meta R$ 2,50 mi · todos os meses abaixo</div>
-      </article>
-      <article class="kpi">
-        <div class="label">Receita média / mês</div>
-        <div class="value pos">R$ 300 mil</div>
-        <div class="hint">Meta R$ 180 mil · nenhum mês abaixo</div>
-      </article>
-      <article class="kpi">
-        <div class="label">Churn mensal vs 3%</div>
-        <div class="value neu">Sem evidência</div>
-        <div class="hint">Retrato: 22 inativos em 40 · não comparável</div>
-      </article>
-    </div>
+Periodo das movimentacoes: 2025-01 a 2025-07.
 
-    <section id="resumo">
-      <h2><span class="num">01</span> Resumo executivo</h2>
-      <p>No período, a casa captou <strong>R$ 3.277.912,75</strong> e resgatou <strong>R$ 3.851.303,21</strong>. A captação líquida ficou negativa em <strong>R$ 573.390,46</strong>. <span class="src">Fonte: KPIs mensais</span></p>
-      <p>A média mensal de captação (<strong>R$ 468.273,25</strong>) ficou muito abaixo da meta de <strong>R$ 2.500.000,00</strong>. A média de líquida (<strong>R$ -81.912,92</strong>) também ficou abaixo da meta de <strong>R$ 1.300.000,00</strong>. <span class="src">Fonte: KPIs + metas</span></p>
-      <p>A receita bateu a meta em todos os meses: média de <strong>R$ 299.909,58</strong> contra <strong>R$ 180.000,00</strong>. <span class="src">Fonte: receita mensal + metas</span></p>
-      <p>Melhor mês de líquida: <strong>fevereiro (R$ 203.108,82)</strong>. Pior: <strong>março (R$ -290.416,81)</strong>, puxado pelo maior resgate do período. No mix, só <strong>Ações Brasil</strong> fecha positivo; no canal, o <strong>App</strong> concentra o vazamento e o <strong>Parceiro</strong> é o único positivo. <span class="src">Fonte: KPIs e análise final</span></p>
-    </section>
+## 1) Resumo executivo
+No periodo, a casa movimentou R$ 3.322.520,14 de captacao e R$ 3.971.878,47 de resgate, com captacao liquida de R$ -649.358,33 (fonte: kpis_mensais).
+A media mensal de captacao ficou abaixo da meta de R$ 2.500.000,00.
+A media mensal de receita foi R$ 299.909,58 contra meta de R$ 180.000,00 (fonte: receita_mensal).
+O melhor mes liquido foi 2025-02 (R$ 203.108,82); o pior, 2025-06 (R$ -288.272,16).
+Produto que mais captou: Acoes Brasil. Canal que mais captou: Assessor.
+Snapshot de clientes inativos: 22/40. Taxa mensal de churn: buraco de dado (sem evidencia).
+Nao ha PII em claro neste pacote. Nao ha recomendacao de investimento.
 
-    <section id="kpis">
-      <h2><span class="num">02</span> KPIs do período versus meta</h2>
-      <p>Médias mensais (7 meses) contra meta mensal cadastrada.</p>
-      <table>
-        <thead>
-          <tr>
-            <th>KPI</th>
-            <th>Realizado</th>
-            <th>Meta mensal</th>
-            <th>Gap</th>
-            <th>Leitura</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Captação</td>
-            <td class="num">R$ 468.273,25</td>
-            <td class="num">R$ 2.500.000,00</td>
-            <td class="num neg">R$ -2.031.726,75</td>
-            <td><span class="pill bad">Abaixo</span></td>
-          </tr>
-          <tr>
-            <td>Resgate</td>
-            <td class="num">R$ 550.186,17</td>
-            <td class="num">R$ 1.200.000,00</td>
-            <td class="num">R$ -649.813,83</td>
-            <td><span class="pill good">Não estoura a meta cadastrada</span></td>
-          </tr>
-          <tr>
-            <td>Captação líquida</td>
-            <td class="num neg">R$ -81.912,92</td>
-            <td class="num">R$ 1.300.000,00</td>
-            <td class="num neg">R$ -1.381.912,92</td>
-            <td><span class="pill bad">Abaixo</span></td>
-          </tr>
-          <tr>
-            <td>Receita</td>
-            <td class="num pos">R$ 299.909,58</td>
-            <td class="num">R$ 180.000,00</td>
-            <td class="num pos">R$ +119.909,58</td>
-            <td><span class="pill good">Acima</span></td>
-          </tr>
-          <tr>
-            <td>Churn de clientes (% ao mês)</td>
-            <td>sem evidência</td>
-            <td>3,0%</td>
-            <td>não comparável</td>
-            <td><span class="pill warn">Buraco de dado</span></td>
-          </tr>
-        </tbody>
-      </table>
-      <p class="src">Fontes: kpis_mensais.csv · receita_mensal.csv · metas (via análise final). Totais do período: captação R$ 3.277.912,75 · resgate R$ 3.851.303,21 · líquida R$ -573.390,46 · receita R$ 2.099.367,09.</p>
-    </section>
+## 2) KPIs do periodo versus meta
+Medias mensais contra meta mensal cadastrada em silver/metas.csv.
 
-    <section id="movimento">
-      <h2><span class="num">03</span> O que subiu / o que caiu</h2>
-      <div class="months">
-        <div class="month"><div class="m">JAN</div><div class="col"><i style="bottom:0;height:48%;background:#b42318;"></i></div><div class="v neg">-279 mil</div></div>
-        <div class="month"><div class="m">FEV</div><div class="col"><i style="bottom:50%;height:35%;background:#1f7a54;"></i></div><div class="v pos">+203 mil</div></div>
-        <div class="month"><div class="m">MAR</div><div class="col"><i style="bottom:0;height:50%;background:#b42318;"></i></div><div class="v neg">-290 mil</div></div>
-        <div class="month"><div class="m">ABR</div><div class="col"><i style="bottom:50%;height:6%;background:#1f7a54;"></i></div><div class="v pos">+32 mil</div></div>
-        <div class="month"><div class="m">MAI</div><div class="col"><i style="bottom:50%;height:3%;background:#1f7a54;"></i></div><div class="v pos">+15 mil</div></div>
-        <div class="month"><div class="m">JUN</div><div class="col"><i style="bottom:0;height:50%;background:#b42318;"></i></div><div class="v neg">-288 mil</div></div>
-        <div class="month"><div class="m">JUL</div><div class="col"><i style="bottom:50%;height:6%;background:#1f7a54;"></i></div><div class="v pos">+34 mil</div></div>
-      </div>
-      <div class="split">
-        <div class="callout alert-ok">
-          <strong>Subiu — fevereiro.</strong> Captação R$ 585.529,05 e resgate R$ 382.420,23. Líquida R$ 203.108,82. Causa no dado: resgate menor que a captação naquele mês.
-        </div>
-        <div class="callout alert-down">
-          <strong>Caiu — março.</strong> Captação R$ 504.054,92 e resgate R$ 794.471,73. Líquida R$ -290.416,81. Causa no dado: maior resgate do período (32 movimentos, 23 clientes).
-        </div>
-      </div>
-      <p>Também negativos: janeiro (R$ -279.013,20) e junho (R$ -288.272,16). Causa qualitativa (campanha, concorrência, atendimento): <strong>sem evidência</strong> neste material. Mix produto/canal existe só no acumulado, não mês a mês. <span class="src">Fonte: KPIs mensais e análise final</span></p>
-    </section>
+| kpi | realizado | meta_mes | gap |
+| --- | --- | --- | --- |
+| captacao (media mensal) | R$ 474.645,73 | R$ 2.500.000,00 | R$ -2.025.354,27 |
+| resgate (media mensal) | R$ 567.411,21 | R$ 1.200.000,00 | R$ -632.588,79 |
+| captacao_liquida (media mensal) | R$ -92.765,48 | R$ 1.300.000,00 | R$ -1.392.765,48 |
+| receita (media mensal) | R$ 299.909,58 | R$ 180.000,00 | R$ 119.909,58 |
+| churn_clientes_pct (mensal) | sem evidencia | 3.0% | nao comparavel |
 
-    <section id="mix">
-      <h2><span class="num">04</span> Mix de produto e canal</h2>
-      <h3>Produto · acumulado jan–jul</h3>
-      <div class="bars">
-        <div class="bar-row"><span>Ações Brasil</span><div class="track"><div class="fill up" style="width:46%"></div></div><span class="pos">+181.369 · 29,3%</span></div>
-        <div class="bar-row"><span>Tesouro Selic</span><div class="track"><div class="fill down" style="width:39%"></div></div><span class="neg">-153.213</span></div>
-        <div class="bar-row"><span>Fundo DI</span><div class="track"><div class="fill down" style="width:24%"></div></div><span class="neg">-92.805</span></div>
-        <div class="bar-row"><span>RF Crédito</span><div class="track"><div class="fill down" style="width:29%"></div></div><span class="neg">-113.877</span></div>
-        <div class="bar-row"><span>Multimercado</span><div class="track"><div class="fill down" style="width:100%"></div></div><span class="neg">-394.864</span></div>
-      </div>
-      <table>
-        <thead><tr><th>Produto</th><th>Captação</th><th>Líquida</th><th>Papel</th></tr></thead>
-        <tbody>
-          <tr><td>Ações Brasil</td><td class="num">R$ 959.467,17 (29,3%)</td><td class="num pos">R$ +181.368,90</td><td>Único produto positivo</td></tr>
-          <tr><td>Tesouro Selic</td><td class="num">R$ 750.497,16</td><td class="num neg">R$ -153.213,47</td><td>Volume alto, líquida negativa</td></tr>
-          <tr><td>Fundo DI</td><td class="num">R$ 604.183,88</td><td class="num neg">R$ -92.805,16</td><td>Líquida negativa</td></tr>
-          <tr><td>Renda Fixa Crédito</td><td class="num">R$ 573.579,52</td><td class="num neg">R$ -113.876,56</td><td>Líquida negativa</td></tr>
-          <tr><td>Fundo Multimercado</td><td class="num">R$ 390.185,02</td><td class="num neg">R$ -394.864,17</td><td>Maior dreno</td></tr>
-        </tbody>
-      </table>
-      <h3>Canal · acumulado jan–jul</h3>
-      <table>
-        <thead><tr><th>Canal</th><th>Captação</th><th>Líquida</th><th>Papel</th></tr></thead>
-        <tbody>
-          <tr><td>Assessor</td><td class="num">R$ 1.376.523,08 (42,0%)</td><td class="num neg">R$ -50.340,36</td><td>Puxa volume; líquida quase zerada</td></tr>
-          <tr><td>App</td><td class="num">R$ 1.184.723,20 (36,1%)</td><td class="num neg">R$ -534.459,23</td><td>Maior vazamento</td></tr>
-          <tr><td>Parceiro</td><td class="num">R$ 716.666,47 (21,9%)</td><td class="num pos">R$ +11.409,13</td><td>Único canal positivo</td></tr>
-        </tbody>
-      </table>
-      <div class="callout">Quem puxou o resultado líquido: produto <strong>Ações Brasil</strong> e canal <strong>Parceiro</strong>. Quem puxou o vazamento: <strong>Fundo Multimercado</strong> e canal <strong>App</strong>. Recorte mês a mês por produto/canal: <strong>sem evidência</strong> neste pack. <span class="src">Fonte: análise final (mix)</span></div>
-    </section>
+## 3) O que subiu / o que caiu
+Subiu (melhor liquida): 2025-02 com captacao R$ 585.529,05 e resgate R$ 382.420,23 — fonte kpis_mensais.
+Caiu (pior liquida): 2025-06 com captacao R$ 386.316,82 e resgate R$ 674.588,98 — fonte kpis_mensais.
+Causa evidenciada ao nivel do harness: diferenca aritmetica captacao - resgate no mes; recorte produto/canal esta em mix_* e base_analise, nao ha evento qualitativo no bronze.
 
-    <section id="alertas">
-      <h2><span class="num">05</span> Receita e churn / status</h2>
-      <div class="split">
-        <div class="callout alert-ok">
-          <strong>Receita — sem alerta de meta.</strong> Todos os meses acima de R$ 180.000. Pico em junho (R$ 346.073,90) e abril (R$ 345.647,88). Menor valor em julho (R$ 253.973,84), ainda acima da meta. <span class="src">Fonte: receita mensal</span>
-        </div>
-        <div class="callout alert-warn">
-          <strong>Churn — alerta de buraco, não de 55% vs 3%.</strong> Retrato da carteira: 18 ativos (45%) e 22 inativos (55%) em 40 clientes. A meta de 3% ao mês não pode ser comparada a esse retrato. Não emitir alerta de “churn estourado”. <span class="src">Fonte: análise final</span>
-        </div>
-      </div>
-    </section>
+## 4) Mix de produto e canal
+| produto | captacao | resgate | qtd | captacao_liquida |
+| --- | --- | --- | --- | --- |
+| Acoes Brasil | 959,467.17 | 778,098.27 | 37 | 181,368.90 |
+| Tesouro Selic | 750,497.16 | 903,710.63 | 39 | -153,213.47 |
+| Fundo DI | 648,791.27 | 817,564.30 | 34 | -168,773.03 |
+| Renda Fixa Credito | 573,579.52 | 687,456.08 | 36 | -113,876.56 |
+| Fundo Multimercado | 390,185.02 | 785,049.19 | 34 | -394,864.17 |
 
-    <section id="recs">
-      <h2><span class="num">06</span> Três recomendações priorizadas</h2>
-      <table>
-        <thead>
-          <tr><th>#</th><th>Recomendação</th><th>Impacto</th><th>Esforço</th><th>Dono sugerido</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Abrir março e junho (piores líquidas) em produto e canal e agir no vazamento</td>
-            <td><span class="pill bad">Alto</span></td>
-            <td>Médio</td>
-            <td>Superintendência Comercial</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Plano de retenção no App (líquida R$ -534.459,23) e revisão comercial do Fundo Multimercado (R$ -394.864,17)</td>
-            <td><span class="pill bad">Alto</span></td>
-            <td>Médio</td>
-            <td>Digital + Produtos</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Registrar data de saída do cliente para medir churn mensal de verdade</td>
-            <td><span class="pill warn">Médio</span></td>
-            <td>Médio</td>
-            <td>Dados / Relacionamento</td>
-          </tr>
-        </tbody>
-      </table>
-      <p class="src">Nenhuma recomendação é dica de investimento.</p>
-    </section>
+| canal | captacao | resgate | qtd | captacao_liquida |
+| --- | --- | --- | --- | --- |
+| Assessor | 1,376,523.08 | 1,426,863.44 | 75 | -50,340.36 |
+| App | 1,229,330.59 | 1,839,757.69 | 69 | -610,427.10 |
+| Parceiro | 716,666.47 | 705,257.34 | 36 | 11,409.13 |
 
-    <section id="limites">
-      <h2><span class="num">07</span> Limites dos dados e próximos passos</h2>
-      <ul>
-        <li>Mix de produto e canal é do período inteiro; metas de produto e de churn são mensais.</li>
-        <li>Não há causa qualitativa (motivo do resgate) na base.</li>
-        <li>Receita e volume movimentado não se encontram no mesmo identificador de transação.</li>
-        <li>Churn mensal: buraco. Próximo passo: evento de inativação com data.</li>
-        <li>Próximo passo comercial: recorte mês × produto × canal só nos meses negativos (mar e jun) e no App.</li>
-      </ul>
-    </section>
+## 5) Receita e churn/status (alertas)
+Receita total R$ 2.099.367,09; media R$ 299.909,58; meta mensal R$ 180.000,00.
+Meses abaixo da meta de receita: nenhum.
+Alerta de churn mensal: **buraco** — so existe snapshot de status (22 inativos). Nao comparar com meta de 3.0%.
 
-    <section id="fontes">
-      <h2><span class="num">08</span> Anexo — fontes e checklist</h2>
-      <ul>
-        <li><code>outputs/analise_final.md</code></li>
-        <li><code>data/gold/kpis_mensais.csv</code></li>
-        <li><code>data/gold/receita_mensal.csv</code></li>
-        <li>Metas: captação 2.500.000 · resgate 1.200.000 · líquida 1.300.000 · receita 180.000 · churn 3% ao mês</li>
-      </ul>
-      <h3>Pronto para Board Pack: SIM</h3>
-      <p>O que falta (ressalva, não impede o pack):</p>
-      <ul>
-        <li>Taxa mensal de churn (hoje só retrato de status)</li>
-        <li>Causa qualitativa dos resgates em mar/jun</li>
-        <li>Mix produto/canal por mês (hoje só acumulado)</li>
-      </ul>
-    </section>
+## 6) 3 recomendacoes
+| prioridade | recomendacao | impacto | esforco | dono sugerido |
+|---|---|---|---|---|
+| 1 | Abrir o mes 2025-06 em produto/canal e agir no vazamento de liquida | alto | medio | Superintendencia Comercial |
+| 2 | Dobrar atencao no produto Acoes Brasil e no canal Assessor | alto | baixo | Produtos + Distribuição |
+| 3 | Instrumentar data de inativacao para medir churn mensal de verdade | medio | medio | Dados / CRM |
 
-    <footer>Allura Finance · Board Pack jan–jul 2025 · Uso didático · Gerado a partir da evidência da etapa EDA</footer>
-  </div>
-</body>
-</html>
+## 7) Limites dos dados e proximos passos
+- Dados sinteticos didaticos; fee de receita muitas vezes nao informado.
+- Receita e movimentacoes nao se cruzam em id de transacao.
+- Proximo passo: incluir evento de churn e conciliar receita x AUM.
+
+## 8) Anexo — fontes
+- data/gold/kpis_mensais.csv
+- data/gold/mix_produto.csv
+- data/gold/mix_canal.csv
+- data/gold/receita_mensal.csv
+- data/gold/status_snapshot.csv
+- data/silver/metas.csv
+- outputs/analise_final.md
+
+Pronto para Board Pack: **SIM**
+Checklist do que falta: taxa mensal de churn; narrativa qualitativa de causa (nao existe no bronze).
+</pre></body></html>

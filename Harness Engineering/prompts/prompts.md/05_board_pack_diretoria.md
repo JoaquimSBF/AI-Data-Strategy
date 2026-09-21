@@ -20,7 +20,14 @@ Regras:
 - Se faltar meta ou periodo, declare o buraco.
 - No final: "Pronto para Board Pack: SIM/NAO" + checklist do que falta.
 
-Material:
+Material minimo (cole trechos ou referencie os arquivos):
+- `outputs/analise_final.md` (obrigatorio)
+- `data/gold/kpis_mensais.csv`
+- `data/gold/mix_produto.csv` e `mix_canal.csv`
+- `data/gold/receita_mensal.csv`
+- `data/gold/status_snapshot.csv`
+- `data/silver/metas.csv`
+
 <<<
 [COLE analise_final + KPIs + metas]
 >>>
@@ -28,5 +35,6 @@ Material:
 ## ONDE SALVAR
 Salve manualmente em:
 
-- `outputs/board_pack.md` -> documento final para diretoria
+- `outputs/board_pack.md` -> documento final para diretoria (obrigatorio)
+- `outputs/board_pack.html` -> opcional (versao visual para apresentacao)
 - `outputs/board_pack.docx` -> opcional (se exportar do Markdown)

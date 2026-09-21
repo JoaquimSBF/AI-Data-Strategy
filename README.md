@@ -22,12 +22,29 @@ Jornada completa da ingestão ao assistente com RAG e guardrails:
 7. Guardrails — Pydantic AI, escopo, PII e evidências
 8. Aplicação — assistente NL + Streamlit
 
+## Como baixar todo o conteúdo
+
+**Opção 1 — Git (recomendado)**
+
+```bash
+git clone https://github.com/JoaquimSBF/AI-Data-Strategy.git
+cd AI-Data-Strategy
+```
+
+**Opção 2 — ZIP (sem Git)**
+
+1. Abra https://github.com/JoaquimSBF/AI-Data-Strategy
+2. Clique em **Code** → **Download ZIP**
+3. Extraia a pasta no seu computador
+
+O repositório já inclui o notebook `Data_AI.ipynb`, os CSVs de entrada em `data/bronze/`, os PPTs, o app Streamlit e os cases da turma. As camadas Silver, Gold e `outputs/` são geradas ao executar o notebook.
+
 ## Execução local
 
-1. Clone o repositório
-2. Coloque os CSVs em `data/bronze/` (movimentacoes, clientes, produtos, receita, metas)
-3. Crie um `.env` com `GEMINI_API_KEY=sua_chave`
-4. Abra e execute `Data_AI.ipynb`
+1. Baixe o repositório (clone ou ZIP)
+2. Copie `.env.example` para `.env` e preencha `GEMINI_API_KEY=sua_chave`
+3. Abra e execute `Data_AI.ipynb` no **Google Colab** (recomendado) ou localmente
+4. Na última célula, clique em **Abrir Allura Finance Lab** — no Colab o link abre direto no navegador, sem precisar de Jupyter no PC
 
 > Todos os dados do caso são **100% sintéticos** e não representam informações reais da Allura Finance.
 

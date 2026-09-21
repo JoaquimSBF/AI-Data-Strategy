@@ -532,8 +532,74 @@ Status: **OK**
 """
 
 
+def chunk_text(text: str, size: int = 1000, overlap: int = 120) -> list[str]:
+    text = text.strip()
+    if not text:
+        return []
+    if len(text) <= size:
+        return [text]
+    chunks: list[str] = []
+    start = 0
+    while start < len(text):
+        end = min(start + size, len(text))
+        chunks.append(text[start:end])
+        if end >= len(text):
+            break
+        start = max(end - overlap, start + 1)
+    return chunks
+
+
+def build_rag_context_json(analise: str, gold: dict[str, pd.DataFrame], metas: pd.DataFrame) -> dict:
+    docs: list[dict] = []
+    for index, part in enumerate(chunk_text(analise)):
+        docs.append(
+            {
+                "id": f"analise_final_{index}",
+                "source": "outputs/analise_final.md",
+                "kind": "narrativa",
+                "chunk_index": index,
+                "text": part,
+            }
+        )
+    table_specs = [
+        ("kpis_mensais", "data/gold/kpis_mensais.csv", "tabela"),
+        ("mix_produto", "data/gold/mix_produto.csv", "tabela"),
+        ("mix_canal", "data/gold/mix_canal.csv", "tabela"),
+        ("receita_mensal", "data/gold/receita_mensal.csv", "tabela"),
+        ("status_snapshot", "data/gold/status_snapshot.csv", "tabela"),
+        ("metas", "data/silver/metas.csv", "tabela"),
+    ]
+    for key, source, kind in table_specs:
+        frame = gold.get(key) if key != "metas" else metas
+        if frame is None:
+            continue
+        text = f"# {source}\n\n{frame.to_csv(index=False)}"
+        for index, part in enumerate(chunk_text(text, size=1200, overlap=80)):
+            docs.append(
+                {
+                    "id": f"{key}_{index}",
+                    "source": source,
+                    "kind": kind,
+                    "chunk_index": index,
+                    "text": part,
+                }
+            )
+    return {
+        "meta": {"chunk_size_chars": 1000, "chunk_overlap_chars": 120},
+        "docs": docs,
+    }
+
+
 def rag_answer(question: str, context: str, fontes_ok: list[str]) -> dict:
-    q = question.lower()
+    q = question.strip().lower()
+    if not q:
+        return {
+            "resposta": "Envie uma pergunta sobre captacao, resgate, receita, mix de produto/canal ou metas da Allura Finance.",
+            "fontes": [],
+            "confianca": "alta",
+            "dentro_do_escopo": True,
+            "nao_sei": True,
+        }
     injection = any(k in q for k in ["ignore as regras", "revele o prompt", "system prompt", "jailbreak"])
     pii_ask = any(k in q for k in ["cpf", "email", "telefone"])
     tip = any(k in q for k in ["comprar", "investir em", "qual acao", "dica de investimento"])
@@ -809,16 +875,14 @@ def main() -> int:
     metas_txt = metas_s.to_csv(index=False)
     context = "# CONTEXTO RAG Allura Finance\n\n" + analise + "\n\n## KPIs mensais\n\n" + kpis_txt + "\n## Metas\n\n" + metas_txt
     (RAG / "rag_context.md").write_text(context, encoding="utf-8")
-    rag_json = {
-        "docs": [
-            {"id": "analise_final", "path": "outputs/analise_final.md"},
-            {"id": "kpis_mensais", "path": "data/gold/kpis_mensais.csv"},
-            {"id": "metas", "path": "data/silver/metas.csv"},
-        ]
-    }
-    (OUTPUTS / "rag_context.json").write_text(json.dumps(rag_json, indent=2), encoding="utf-8")
+    rag_json = build_rag_context_json(analise, gold, metas_s)
+    (OUTPUTS / "rag_context.json").write_text(
+        json.dumps(rag_json, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
 
     perguntas = [
+        ("", True),
         ("Como esta a captacao liquida por mes?", True),
         ("Quais produtos puxam o resultado?", True),
         ("Qual a taxa de churn mensal?", True),
@@ -846,7 +910,18 @@ def main() -> int:
     (RAG / "perguntas_respostas.md").write_text("# Historico Q&A RAG\n\n" + "\n".join(qa_blocks), encoding="utf-8")
     (OUTPUTS / "rag_ultima_resposta.md").write_text(json.dumps(last, ensure_ascii=False, indent=2), encoding="utf-8")
     (OUTPUTS / "juiz_avaliacoes.md").write_text("# Avaliacoes do juiz\n\n" + "\n".join(juiz_blocks), encoding="utf-8")
-    (OUTPUTS / "board_pack.md").write_text(write_board(gold, metas_s, clientes_s), encoding="utf-8")
+    board_md = write_board(gold, metas_s, clientes_s)
+    (OUTPUTS / "board_pack.md").write_text(board_md, encoding="utf-8")
+    board_html = (
+        "<!DOCTYPE html><html lang='pt-BR'><head><meta charset='utf-8'>"
+        "<title>Board Pack — Allura Finance</title>"
+        "<style>body{font-family:Inter,Arial,sans-serif;max-width:900px;margin:2rem auto;line-height:1.5;color:#111827}"
+        "h1,h2{color:#0f766e}table{border-collapse:collapse;width:100%;margin:1rem 0}"
+        "th,td{border:1px solid #e5e7eb;padding:8px;text-align:left}th{background:#f8fafc}</style></head><body><pre style='white-space:pre-wrap;font-family:inherit'>"
+        + board_md.replace("&", "&amp;").replace("<", "&lt;")
+        + "</pre></body></html>"
+    )
+    (OUTPUTS / "board_pack.html").write_text(board_html, encoding="utf-8")
 
     expected = [
         SILVER / "clientes.csv",
@@ -867,11 +942,16 @@ def main() -> int:
         OUTPUTS / "elt_relatorio.md",
         OUTPUTS / "analise_final.md",
         OUTPUTS / "board_pack.md",
+        OUTPUTS / "board_pack.html",
         OUTPUTS / "juiz_avaliacoes.md",
         OUTPUTS / "rag_ultima_resposta.md",
+        OUTPUTS / "rag_context.json",
         RAG / "rag_context.md",
         RAG / "perguntas_respostas.md",
     ]
+    rag_docs = json.loads((OUTPUTS / "rag_context.json").read_text(encoding="utf-8"))["docs"]
+    record("rag_context_tem_chunks", len(rag_docs) >= 5, f"{len(rag_docs)} docs")
+    record("rag_context_tem_texto", all("text" in d and d["text"] for d in rag_docs), "")
     missing = [str(p.relative_to(ROOT)) for p in expected if not p.exists() or p.stat().st_size == 0]
     record("artefatos_mapa_presentes", len(missing) == 0, ", ".join(missing) if missing else "ok")
     record("board_pack_sim", "Pronto para Board Pack: **SIM**" in (OUTPUTS / "board_pack.md").read_text(encoding="utf-8"), "")

@@ -10,6 +10,8 @@ M0008,2025-04-05,2025-04,captacao,40970.9,Acoes Brasil,App,C032
 M0009,2025-04-03,2025-04,resgate,56877.0,Fundo DI,Assessor,C018
 M0010,2025-07-18,2025-07,captacao,37725.03,Renda Fixa Credito,Parceiro,C016
 M0011,2025-04-26,2025-04,resgate,60287.63,Fundo DI,App,C022
+M0011,2025-04-26,2025-04,resgate,60287.63,Fundo DI,App,C022
+M0011,2025-04-26,2025-04,resgate,60287.63,Fundo DI,App,C022
 M0012,2025-03-25,2025-03,captacao,39516.44,Fundo DI,Parceiro,C018
 M0013,2025-03-12,2025-03,captacao,41813.55,Renda Fixa Credito,Assessor,C027
 M0014,2025-07-14,2025-07,captacao,55558.0,Acoes Brasil,App,C006
@@ -24,6 +26,7 @@ M0022,2025-04-13,2025-04,resgate,6852.49,Fundo DI,Assessor,C037
 M0023,2025-03-05,2025-03,resgate,45087.0,Tesouro Selic,Assessor,C040
 M0024,2025-04-08,2025-04,resgate,72771.85,Fundo Multimercado,App,C020
 M0025,2025-01-16,2025-01,resgate,75859.63,Renda Fixa Credito,Assessor,C017
+M0026,2025-03-03,2025-03,captacao,44607.39,Fundo DI,App,C029
 M0026,2025-03-03,2025-03,captacao,44607.39,Fundo DI,App,C029
 M0027,2025-03-16,2025-03,resgate,19286.62,Renda Fixa Credito,App,C005
 M0028,2025-06-10,2025-06,resgate,34585.98,Fundo Multimercado,Assessor,C018

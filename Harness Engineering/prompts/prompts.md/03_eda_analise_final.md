@@ -9,6 +9,11 @@ Perguntas obrigatorias:
 3) Quais canais se destacam?
 4) Como estao receita e churn/status? Ha alerta versus meta?
 
+Importante sobre churn:
+- `status_snapshot` / clientes inativos e um **snapshot pontual**, nao taxa mensal de churn.
+- Se nao houver data de inativacao, escreva **sem evidencia** para comparar com a meta `churn_clientes_pct`.
+- Nao confunda % de inativos com churn mensal.
+
 Tarefa:
 - Responda cada pergunta com numeros da base.
 - Cite a tabela/fonte usada.

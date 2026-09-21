@@ -1,6 +1,8 @@
 .env
 *.duckdb
 outputs/
+data/silver/
+data/gold/
 __pycache__/
 .ipynb_checkpoints/
 *.zip

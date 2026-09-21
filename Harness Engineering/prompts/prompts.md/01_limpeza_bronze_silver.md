@@ -6,8 +6,12 @@ Tarefa:
 1) Para cada tabela, liste problemas encontrados (qualidade).
 2) Proponha regras de limpeza claras e reproduziveis.
 3) Mostre ANTES (amostra 5 linhas) e DEPOIS (amostra 5 linhas) por tabela.
-4) Em clientes: substitua CPF/email/telefone por hash/pseudonimo (nao mostre o valor original depois).
-5) Padronize: datas, ano_mes, tipo (captacao/resgate), canal, produto, status, segmento, valores numericos.
+4) Em clientes: substitua CPF/email/telefone por hash (nao mostre o valor original depois). O campo `nome` pode permanecer como pseudonimo textual ou ser removido — nunca exponha PII direta.
+5) Padronize colunas Silver finais (use estes nomes):
+   - movimentacoes: `id_mov`, `data`, `ano_mes`, `cliente_id`, `produto`, `canal`, `tipo`, `valor`
+   - clientes: `cliente_id`, `segmento`, `status`, `data_entrada`, `cpf_hash`, `email_hash`, `telefone_hash`
+   - produtos, receita, metas: tipos e categorias padronizados
+   (No notebook as colunas podem aparecer como `data_mov`, `tipo_padrao` etc. — aqui normalize para os nomes acima.)
 6) Remova ou sinalize linhas invalidas (valor <= 0, data nula, tipo desconhecido) e diga o criterio.
 7) Entregue um checklist final: o que ficou OK / o que ainda e risco.
 8) Ao final, entregue tambem o conteudo CSV limpo de cada tabela (pronto para copiar/salvar).

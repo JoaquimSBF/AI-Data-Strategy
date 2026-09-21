@@ -1,15 +1,7 @@
-# Ultima resposta RAG
-
-PERGUNTA:
-
-<<<
-
-
->>>
-
-RESPOSTA:
-- resposta:
-- fontes:
-- confianca:
-- dentro_do_escopo:
-- nao_sei:
+{
+  "resposta": "Nao tem a informacao no contexto enviado.",
+  "fontes": [],
+  "confianca": "baixa",
+  "dentro_do_escopo": true,
+  "nao_sei": true
+}

@@ -40,5 +40,9 @@ Salve manualmente em:
   - kpis_mensais.csv
   - mix_produto.csv
   - mix_canal.csv
+  - receita_mensal.csv
+  - status_snapshot.csv
 
 - `outputs/elt_relatorio.md` -> diagrama, SQL e testes
+
+Nota: no notebook DuckDB a tabela pode se chamar `churn_snapshot`; no harness use `status_snapshot.csv` com colunas `status`, `qtd`, `pct`.

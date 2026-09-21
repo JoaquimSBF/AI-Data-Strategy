@@ -776,7 +776,7 @@ def main() -> None:
             render_chat_empty_state()
         for message in st.session_state.messages:
             if message["role"] == "assistant":
-                with st.chat_message("assistant", avatar="✦"):
+                with st.chat_message("assistant", avatar="🤖"):
                     render_answer(message["payload"])
             else:
                 with st.chat_message("user", avatar="👤"):
