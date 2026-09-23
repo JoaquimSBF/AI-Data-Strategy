@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Radar de Saúde do Cliente</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#conteudo">Ir para o conteúdo</a>
+  <header class="top">
+    <div>
+      <p class="eyebrow">Carteira fictícia · dados sintéticos</p>
+      <h1>Radar de Saúde do Cliente</h1>
+    </div>
+    <div class="toolbar">
+      <label>Segmento
+        <select id="filtro-segmento"></select>
+      </label>
+      <label>Nível do sinal
+        <select id="filtro-nivel"></select>
+      </label>
+      <button type="button" id="btn-restaurar">Restaurar demonstração</button>
+      <button type="button" id="btn-apagar">Apagar dados locais</button>
+    </div>
+  </header>
+
+  <nav class="nav" aria-label="Seções">
+    <button type="button" data-view="executiva" class="active">Visão executiva</button>
+    <button type="button" data-view="carteira">Carteira</button>
+    <button type="button" data-view="cliente">Cliente</button>
+    <button type="button" data-view="sinais">Sinais</button>
+    <button type="button" data-view="ops">Ações</button>
+    <button type="button" data-view="dados">Dados</button>
+  </nav>
+
+  <main id="conteudo">
+    <p id="status-app" class="status" role="status">Carregando demonstração.</p>
+    <section id="view-executiva" class="view"></section>
+    <section id="view-carteira" class="view hidden"></section>
+    <section id="view-cliente" class="view hidden"></section>
+    <section id="view-sinais" class="view hidden"></section>
+    <section id="view-ops" class="view hidden"></section>
+    <section id="view-dados" class="view hidden">
+      <h2>Dados e exportação</h2>
+      <p>Importe CSV ou JSON locais. Arquivos acima de 5 MB ou com extensão inválida são rejeitados.</p>
+      <input id="file-input" type="file" accept=".csv,.json" multiple>
+      <pre id="import-log" class="log"></pre>
+      <div class="row">
+        <button type="button" id="btn-export-json">Exportar ações JSON</button>
+        <button type="button" id="btn-export-csv">Exportar ações CSV</button>
+        <button type="button" id="btn-export-md">Exportar resumo Markdown</button>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="dlg-evidencia">
+    <form method="dialog">
+      <h2 id="dlg-titulo">Evidência</h2>
+      <div id="dlg-corpo"></div>
+      <button type="submit">Fechar</button>
+    </form>
+  </dialog>
+
+  <footer>Aplicação local. Sinal ≠ alerta ≠ inativo ≠ churn. Sem CRM ao vivo.</footer>
+  <script src="sample-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

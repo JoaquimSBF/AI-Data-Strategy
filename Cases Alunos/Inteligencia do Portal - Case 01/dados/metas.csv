@@ -1,0 +1,6 @@
+kpi,meta,unidade,direcao,ano_mes_inicio,ano_mes_fim
+usuarios_mensais,260000,qtd,maior_melhor,2026-01,2026-06
+tempo_medio_seg,190,seg,maior_melhor,2026-01,2026-06
+taxa_rejeicao_pct,55,pct,menor_melhor,2026-01,2026-06
+seo_tecnico_score,85,pontos,maior_melhor,2026-01,2026-06
+share_citacao_ia_pct,35,pct,maior_melhor,2026-01,2026-06

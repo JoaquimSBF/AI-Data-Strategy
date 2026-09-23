@@ -1,0 +1,38 @@
+ano_mes,consulta,editoria,impressoes,cliques,ctr_pct,posicao_media,pagina_id
+2026-01,eleições municipais,Política,21750,520,2.39,12.47,ART001
+2026-01,taxa de juros,Economia,23.200,513,2.22,12.79,ART002
+2026-01,inteligência artificial,Tecnologia,24650,502,2.04,13.11,ART003
+2026-01,campeonato nacional,Esportes,26.100,486,1.86,13.43,ART004
+2026-01,agenda cultural,Cultura,27550,464,1.69,13.75,ART005
+2026-01,explicador do dia,Economia,29.000,438,1.51,14.07,ART006
+02/2026,eleições municipais,Política,24050,661,"2,75",11.82,ART005
+02/2026,taxa de juros,Economia,25.500,656,"2,57",12.14,ART006
+02/2026,INTELIGÊNCIA ARTIFICIAL,Tecnologia,26950,645,"2,40",12.46,ART007
+02/2026,campeonato nacional,Esportes,28.400,630,"2,22",12.78,ART008
+02/2026,agenda cultural,Cultura,29850,610,"2,05",13.10,ART009
+02/2026,explicador do dia,Economia,31.300,584,"1,87",13.42,ART010
+2026-03,eleições municipais,Política,26350,818,3.11,11.17,ART009
+2026-03,taxa de juros,Economia,27.800,814,2.93,11.49,ART010
+2026-03,inteligência artificial,Tecnologia,29250,805,2.75,11.81,ART011
+2026-03,campeonato nacional,Esportes,30.700,791,2.58,12.13,ART012
+2026-03,agenda cultural,Cultura,32150,772,2.40,12.45,ART013
+2026-03,explicador do dia,Economia,33.600,748,2.23,12.77,ART014
+04/2026,eleições municipais,Política,28650,992,"3,46",10.52,ART013
+04/2026,taxa de juros,Economia,30.100,989,"3,29",10.84,ART014
+04/2026,INTELIGÊNCIA ARTIFICIAL,Tecnologia,31550,981,"3,11",11.16,ART015
+04/2026,campeonato nacional,Esportes,33.000,968,"2,94",11.48,ART016
+04/2026,agenda cultural,Cultura,34450,950,"2,76",11.80,ART017
+04/2026,explicador do dia,Economia,35.900,927,"2,58",12.12,ART018
+2026-05,eleições municipais,Política,30950,1182,3.82,9.87,ART017
+2026-05,taxa de juros,Economia,32.400,1181,3.65,10.19,ART018
+2026-05,inteligência artificial,Tecnologia,33850,1174,3.47,10.51,ART019
+2026-05,campeonato nacional,Esportes,35.300,1162,3.29,10.83,ART020
+2026-05,agenda cultural,Cultura,36750,1145,3.12,11.15,ART021
+2026-05,explicador do dia,Economia,38.200,1123,2.94,11.47,ART022
+06/2026,eleições municipais,Política,33250,1389,"4,18",9.22,ART021
+06/2026,taxa de juros,Economia,34.700,1389,"4,00",9.54,ART022
+06/2026,INTELIGÊNCIA ARTIFICIAL,Tecnologia,36150,1383,"3,83",9.86,ART023
+06/2026,campeonato nacional,Esportes,37.600,1372,"3,65",10.18,ART024
+06/2026,agenda cultural,Cultura,39050,1356,"3,48",10.50,ART025
+06/2026,explicador do dia,Economia,40.500,1336,"3,30",10.82,ART026
+2026-06,consulta sem medição,Tecnologia,n/a,,,,ART999

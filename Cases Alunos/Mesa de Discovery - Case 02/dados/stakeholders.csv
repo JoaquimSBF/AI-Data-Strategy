@@ -1,0 +1,6 @@
+papel_id,papel,area,influencia,obrigatorio_aprovacao
+P01,sponsor,negocio,alta,SIM
+P02,product_manager,produto,Alta,sim
+P03,tech_lead,tecnologia,media,nao
+P04,juridico,juridico,alta,SIM
+P05,operacoes,operacoes,media,Não

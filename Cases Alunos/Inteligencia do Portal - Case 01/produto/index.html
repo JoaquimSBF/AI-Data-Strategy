@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inteligência do Portal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#conteudo">Ir para o conteúdo</a>
+  <header class="top">
+    <div>
+      <p class="eyebrow">Portal fictício · dados sintéticos</p>
+      <h1>Inteligência do Portal</h1>
+    </div>
+    <div class="toolbar">
+      <label>Período
+        <select id="filtro-periodo"></select>
+      </label>
+      <button type="button" id="btn-restaurar">Restaurar demonstração</button>
+      <button type="button" id="btn-apagar">Apagar dados locais</button>
+    </div>
+  </header>
+
+  <nav class="nav" aria-label="Seções">
+    <button type="button" data-view="executiva" class="active">Visão executiva</button>
+    <button type="button" data-view="audiencia">Audiência</button>
+    <button type="button" data-view="busca">Busca</button>
+    <button type="button" data-view="benchmark">Benchmark</button>
+    <button type="button" data-view="ia">Visibilidade em IA</button>
+    <button type="button" data-view="ops">Oportunidades</button>
+    <button type="button" data-view="dados">Dados</button>
+  </nav>
+
+  <main id="conteudo">
+    <p id="status-app" class="status" role="status">Carregando demonstração.</p>
+    <section id="view-executiva" class="view"></section>
+    <section id="view-audiencia" class="view hidden"></section>
+    <section id="view-busca" class="view hidden"></section>
+    <section id="view-benchmark" class="view hidden"></section>
+    <section id="view-ia" class="view hidden"></section>
+    <section id="view-ops" class="view hidden"></section>
+    <section id="view-dados" class="view hidden">
+      <h2>Dados e exportação</h2>
+      <p>Importe CSV ou JSON locais. Arquivos acima de 5 MB ou com extensão inválida são rejeitados.</p>
+      <input id="file-input" type="file" accept=".csv,.json" multiple>
+      <pre id="import-log" class="log"></pre>
+      <div class="row">
+        <button type="button" id="btn-export-json">Exportar backlog JSON</button>
+        <button type="button" id="btn-export-csv">Exportar backlog CSV</button>
+        <button type="button" id="btn-export-md">Exportar resumo Markdown</button>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="dlg-evidencia">
+    <form method="dialog">
+      <h2 id="dlg-titulo">Evidência</h2>
+      <div id="dlg-corpo"></div>
+      <button type="submit">Fechar</button>
+    </form>
+  </dialog>
+
+  <footer>Aplicação local. Não é Analytics, Search Console nem medição universal de IA.</footer>
+  <script src="sample-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+ticket_id,cliente_id,aberto_em,severidade,status,sla_estourado
+T01,CL01,2026-03-01,baixa,fechado,nao
+T02,CL02,03/03/2026,alta,aberto,SIM
+T03,CL02,2026/03/10,critica,Aberto,sim
+T04,CL03,2026-02-20,media,fechado,nao
+T05,CL04,11-03-2026,alta,aberto,sim
+T06,CL06,2026-01-08,critica,aberto,SIM
+T99,CL05,2026-03-22,media,aberto,n/a

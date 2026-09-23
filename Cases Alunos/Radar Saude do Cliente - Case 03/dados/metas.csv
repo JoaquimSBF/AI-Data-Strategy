@@ -1,0 +1,4 @@
+kpi,meta,unidade,direcao,ano_mes_inicio,ano_mes_fim
+clientes_com_sinal_alto,2,qtd,menor_melhor,2026-01,2026-03
+tickets_sla_estourado,2,qtd,menor_melhor,2026-01,2026-03
+churn_clientes_pct,3,pct,menor_melhor,2026-01,2026-03

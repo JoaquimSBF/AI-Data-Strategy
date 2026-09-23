@@ -1,0 +1,27 @@
+conteudo_id,data_publicacao,editoria,formato,titulo_sintetico,autor_pseudo,palavras,data_atualizacao,schema_article,faq_presente,fontes_externas_qtd,status
+ART001,04/01/2026,Política,noticia,Conteúdo sintético 01 sobre Política,AUTOR_01,557,,SIM,não,2,Publicado
+ART002,07/02/2026,Economia,analise,Conteúdo sintético 02 sobre Economia,AUTOR_02,594,,SIM,não,4,Publicado
+ART003,2026-03-10,Tecnologia,explicador,Conteúdo sintético 03 sobre Tecnologia,AUTOR_03,631,,SIM,não,6,Publicado
+ART004,13/04/2026,Esportes,entrevista,Conteúdo sintético 04 sobre Esportes,AUTOR_04,668,2026-05-15,SIM,não,1,Publicado
+ART005,16/05/2026,CULTURA,noticia,Conteúdo sintético 05 sobre Cultura,AUTOR_05,705,,nao,não,3,Publicado
+ART006,2026-06-19,Política,analise,Conteúdo sintético 06 sobre Política,AUTOR_06,742,,SIM,sim,5,Publicado
+ART007,22/01/2026,Economia,explicador,Conteúdo sintético 07 sobre Economia,AUTOR_01,779,,SIM,não,0,publicado 
+ART008,25/02/2026,Tecnologia,entrevista,Conteúdo sintético 08 sobre Tecnologia,AUTOR_02,816,2026-03-27,SIM,não,2,Publicado
+ART009,2026-03-01,Esportes,noticia,Conteúdo sintético 09 sobre Esportes,AUTOR_03,853,,SIM,não,4,Publicado
+ART010,04/04/2026,CULTURA,analise,Conteúdo sintético 10 sobre Cultura,AUTOR_04,890,,nao,não,6,Publicado
+ART011,07/05/2026,Política,explicador,Conteúdo sintético 11 sobre Política,AUTOR_05,927,,SIM,não,1,Publicado
+ART012,2026-06-10,Economia,entrevista,Conteúdo sintético 12 sobre Economia,AUTOR_06,964,2026-06-12,SIM,sim,3,Publicado
+ART013,13/01/2026,Tecnologia,noticia,Conteúdo sintético 13 sobre Tecnologia,AUTOR_01,1001,,SIM,não,5,Publicado
+ART014,16/02/2026,Esportes,analise,Conteúdo sintético 14 sobre Esportes,AUTOR_02,1038,,SIM,não,0,publicado 
+ART015,2026-03-19,CULTURA,explicador,Conteúdo sintético 15 sobre Cultura,AUTOR_03,1075,,nao,não,2,Publicado
+ART016,22/04/2026,Política,entrevista,Conteúdo sintético 16 sobre Política,AUTOR_04,1112,2026-05-24,SIM,não,4,Publicado
+ART017,25/05/2026,Economia,noticia,Conteúdo sintético 17 sobre Economia,AUTOR_05,1149,,SIM,não,6,Publicado
+ART018,2026-06-01,Tecnologia,analise,Conteúdo sintético 18 sobre Tecnologia,AUTOR_06,1186,,SIM,sim,1,Publicado
+ART019,04/01/2026,Esportes,explicador,Conteúdo sintético 19 sobre Esportes,AUTOR_01,1223,,SIM,não,3,Publicado
+ART020,07/02/2026,CULTURA,entrevista,Conteúdo sintético 20 sobre Cultura,AUTOR_02,1260,2026-03-09,nao,não,5,Publicado
+ART021,2026-03-10,Política,noticia,Conteúdo sintético 21 sobre Política,AUTOR_03,1297,,SIM,não,0,publicado 
+ART022,13/04/2026,Economia,analise,Conteúdo sintético 22 sobre Economia,AUTOR_04,1334,,SIM,não,2,Publicado
+ART023,16/05/2026,Tecnologia,explicador,Conteúdo sintético 23 sobre Tecnologia,AUTOR_05,1371,,SIM,não,4,Publicado
+ART024,2026-06-19,Esportes,entrevista,Conteúdo sintético 24 sobre Esportes,AUTOR_06,1408,2026-06-21,SIM,sim,6,Publicado
+ART005,16/05/2026,CULTURA,noticia,Conteúdo sintético 05 sobre Cultura,AUTOR_05,705,,nao,não,3,Publicado
+ART999,,Economia,noticia,Registro inválido sem data,AUTOR_99,450,,sim,não,1,publicado
