@@ -1,0 +1,4 @@
+kpi,ano_mes,realizado,meta,diferenca,direcao,status
+clientes_com_sinal_alto,2026-01 a 2026-03,3,2,1,menor_melhor,nao_atingida
+tickets_sla_estourado,2026-01 a 2026-03,4,2,2,menor_melhor,nao_atingida
+churn_clientes_pct,2026-01 a 2026-03,sem evidencia,3.00,sem evidencia,menor_melhor,sem evidencia

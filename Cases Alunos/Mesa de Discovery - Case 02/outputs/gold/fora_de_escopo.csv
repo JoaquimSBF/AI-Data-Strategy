@@ -1,0 +1,3 @@
+item_id,evidencia_id,descricao,origem
+OUT-001,E06,App mobile nativo ficou fora do MVP.,evidencia
+OUT-002,sem evidencia de requisito,Ideia I03 rejeitada: Integrar CRM ao vivo no primeiro sprint.,I03

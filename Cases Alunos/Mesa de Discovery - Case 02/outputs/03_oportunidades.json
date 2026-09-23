@@ -1,0 +1,187 @@
+[
+  {
+    "oportunidade_id": "OPP-001",
+    "titulo": "Capturar evidência, requisito e aprovação no MVP",
+    "tipo": "requisito",
+    "problema_observado": "MVP deve cobrir captura, rastreio e aprovação de requisito.",
+    "evidencias": [
+      "EVD-003",
+      "EVD-007"
+    ],
+    "acao_proposta": "Construir o workspace com captura de ata, requisito com evidencia_id e kanban de aprovação por papel.",
+    "resultado_esperado": "Hipótese: cobrir o núcleo do MVP sem inventar requisito. sem evidencia causal",
+    "metrica_acompanhamento": "pct_requisitos_com_fonte",
+    "baseline": 100,
+    "unidade": "pct",
+    "prioridade": "alta",
+    "score_prioridade": 9,
+    "relevancia": 3,
+    "urgencia": 3,
+    "acionabilidade": 3,
+    "confianca": "alta",
+    "responsavel_sugerido": "product_manager",
+    "status": "nova",
+    "limitacoes": [
+      "Aprovador oficial permanece nao_definido."
+    ],
+    "aprovacao_humana_obrigatoria": true
+  },
+  {
+    "oportunidade_id": "OPP-002",
+    "titulo": "Checklist único de onboarding por cliente",
+    "tipo": "requisito",
+    "problema_observado": "Onboarding de novos times leva mais de 20 dias úteis.",
+    "evidencias": [
+      "EVD-003"
+    ],
+    "acao_proposta": "Desenhar checklist único citado por Operações, sem integrar CRM ao vivo.",
+    "resultado_esperado": "Hipótese: reduzir tempo até primeiro uso supervisionado. sem evidencia causal",
+    "metrica_acompanhamento": "requisitos_mvp",
+    "baseline": 7,
+    "unidade": "qtd",
+    "prioridade": "alta",
+    "score_prioridade": 9,
+    "relevancia": 3,
+    "urgencia": 3,
+    "acionabilidade": 3,
+    "confianca": "media",
+    "responsavel_sugerido": "operacoes",
+    "status": "nova",
+    "limitacoes": [
+      "Tempo de 20 dias úteis é relato, não medição Gold."
+    ],
+    "aprovacao_humana_obrigatoria": true
+  },
+  {
+    "oportunidade_id": "OPP-003",
+    "titulo": "Operar o MVP sem API estável de CRM",
+    "tipo": "restricao",
+    "problema_observado": "CRM atual não expõe API estável de contas.",
+    "evidencias": [
+      "EVD-003",
+      "EVD-006"
+    ],
+    "acao_proposta": "Importar arquivos locais e persistir no navegador. Não abrir conexão ao CRM.",
+    "resultado_esperado": "Hipótese: respeitar restrição técnica e ideia rejeitada I03.",
+    "metrica_acompanhamento": "itens_fora_de_escopo",
+    "baseline": 2,
+    "unidade": "qtd",
+    "prioridade": "alta",
+    "score_prioridade": 8,
+    "relevancia": 3,
+    "urgencia": 3,
+    "acionabilidade": 2,
+    "confianca": "alta",
+    "responsavel_sugerido": "tech_lead",
+    "status": "nova",
+    "limitacoes": [
+      "CRM permanece sem API estável neste semestre."
+    ],
+    "aprovacao_humana_obrigatoria": true
+  },
+  {
+    "oportunidade_id": "OPP-004",
+    "titulo": "Bloquear PII em ferramenta externa",
+    "tipo": "restricao",
+    "problema_observado": "PII de clientes reais não pode ir para ferramenta externa.",
+    "evidencias": [
+      "EVD-003"
+    ],
+    "acao_proposta": "Usar papéis, não nomes. Recusar importação com e-mail ou CPF.",
+    "resultado_esperado": "Hipótese: cumprir restrição legal C01.",
+    "metrica_acompanhamento": "incidentes_pii",
+    "baseline": 0,
+    "unidade": "qtd",
+    "prioridade": "alta",
+    "score_prioridade": 9,
+    "relevancia": 3,
+    "urgencia": 3,
+    "acionabilidade": 3,
+    "confianca": "alta",
+    "responsavel_sugerido": "juridico",
+    "status": "nova",
+    "limitacoes": [
+      "Histórico de conversas permanece com dúvida jurídica (E08)."
+    ],
+    "aprovacao_humana_obrigatoria": true
+  },
+  {
+    "oportunidade_id": "OPP-005",
+    "titulo": "Expor o conflito de prazo sem escolher um lado",
+    "tipo": "conflito",
+    "problema_observado": "Produto quer lançar em 30 dias; tecnologia estima 8 semanas.",
+    "evidencias": [
+      "EVD-005"
+    ],
+    "acao_proposta": "Mostrar o conflito no workspace e exigir decisão humana. Não prometer 30 dias nem 8 semanas.",
+    "resultado_esperado": "Conflito visível. Prazo oficial = nao_definido.",
+    "metrica_acompanhamento": "conflitos_abertos",
+    "baseline": 1,
+    "unidade": "qtd",
+    "prioridade": "media",
+    "score_prioridade": 7,
+    "relevancia": 3,
+    "urgencia": 2,
+    "acionabilidade": 2,
+    "confianca": "alta",
+    "responsavel_sugerido": "sponsor",
+    "status": "nova",
+    "limitacoes": [
+      "Não há evidência de prazo homologado."
+    ],
+    "aprovacao_humana_obrigatoria": true
+  },
+  {
+    "oportunidade_id": "OPP-006",
+    "titulo": "Fechar a pergunta do aprovador oficial",
+    "tipo": "pergunta_aberta",
+    "problema_observado": "Há dúvida se o jurídico aprova histórico de conversas.",
+    "evidencias": [
+      "EVD-004",
+      "EVD-008"
+    ],
+    "acao_proposta": "Registrar papéis obrigatórios (sponsor, product_manager, juridico) e deixar o aprovador único como nao_definido.",
+    "resultado_esperado": "Pergunta rastreável. sem evidencia de resposta.",
+    "metrica_acompanhamento": "pct_perguntas_abertas",
+    "baseline": 18.18,
+    "unidade": "pct",
+    "prioridade": "media",
+    "score_prioridade": 6,
+    "relevancia": 2,
+    "urgencia": 2,
+    "acionabilidade": 2,
+    "confianca": "media",
+    "responsavel_sugerido": "sponsor",
+    "status": "nova",
+    "limitacoes": [
+      "A resposta não está nas atas."
+    ],
+    "aprovacao_humana_obrigatoria": true
+  },
+  {
+    "oportunidade_id": "OPP-007",
+    "titulo": "Manter mobile nativo e CRM ao vivo fora do MVP",
+    "tipo": "fora_de_escopo",
+    "problema_observado": "App mobile nativo ficou fora do MVP.; Ideia I03 rejeitada: Integrar CRM ao vivo no primeiro sprint.",
+    "evidencias": [
+      "EVD-006"
+    ],
+    "acao_proposta": "Listar os itens em Fora de escopo e recusar promoção automática a requisito.",
+    "resultado_esperado": "Escopo preservado.",
+    "metrica_acompanhamento": "itens_fora_de_escopo",
+    "baseline": 2,
+    "unidade": "qtd",
+    "prioridade": "media",
+    "score_prioridade": 6,
+    "relevancia": 2,
+    "urgencia": 1,
+    "acionabilidade": 3,
+    "confianca": "alta",
+    "responsavel_sugerido": "product_manager",
+    "status": "nova",
+    "limitacoes": [
+      "Não completar a meta de 8 requisitos inventando um oitavo."
+    ],
+    "aprovacao_humana_obrigatoria": true
+  }
+]

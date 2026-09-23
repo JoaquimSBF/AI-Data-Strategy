@@ -1,0 +1,9 @@
+evento_id,cliente_id,data,tipo,compareceu,pendencias
+EV01,CL01,2026-02-10,qbr,true,1
+EV02,CL02,2026-02-12,qbr,false,4
+EV03,CL02,2026-03-05,status,false,5
+EV04,CL03,2026-03-12,status,true,0
+EV05,CL04,2026-03-18,qbr,false,3
+EV06,CL05,2026-03-20,kickoff,true,1
+EV07,CL06,2026-01-15,status,false,6
+EV08,CL01,2026-03-25,status,true,0

@@ -1,0 +1,5 @@
+restricao_id,tipo,descricao,obrigatoria
+C01,legal,Sem envio de PII para SaaS não homologado.,true
+C02,prazo,Produto pede piloto em 30 dias.,false
+C03,tecnica,CRM sem API estável.,true
+C04,escopo,Mobile nativo fora do MVP.,true

@@ -1,0 +1,198 @@
+[
+  {
+    "oportunidade_id": "OPP-001",
+    "titulo": "Fechar o gap de usuários versus a meta vigente",
+    "tipo": "audiencia",
+    "problema_observado": "Usuários em 2026-06 foram 265842; a meta vigente é 260000. A meta não foi atingida em 5 competências.",
+    "evidencias": [
+      "EVD-001",
+      "EVD-013"
+    ],
+    "acao_proposta": "Revisar calendário das editorias com menor mix e testar uma pauta extra por semana nas duas maiores editorias, medindo usuários no mês seguinte.",
+    "resultado_esperado": "Hipótese: reduzir o gap mensal frente a 260000. sem evidencia causal",
+    "metrica_acompanhamento": "usuarios_mensais",
+    "baseline": 265842.0,
+    "unidade": "qtd",
+    "prioridade": "alta",
+    "score_prioridade": 8,
+    "relevancia": 3,
+    "urgencia": 3,
+    "acionabilidade": 2,
+    "confianca": "media",
+    "responsavel_sugerido": "editoria",
+    "status": "nova",
+    "limitacoes": [
+      "Premissa de atribuição exclusiva de usuários.",
+      "sem evidencia causal"
+    ],
+    "aprovacao_humana_obrigatoria": true
+  },
+  {
+    "oportunidade_id": "OPP-002",
+    "titulo": "Sustentar a queda da rejeição já abaixo da meta",
+    "tipo": "engajamento",
+    "problema_observado": "Rejeição ponderada em 2026-06 foi 54.79%, abaixo da meta de 55%.",
+    "evidencias": [
+      "EVD-003",
+      "EVD-015"
+    ],
+    "acao_proposta": "Documentar as páginas e formatos do último trimestre com rejeição abaixo de 55% e replicar o padrão de atualização, sem alterar o restante do catálogo de uma vez.",
+    "resultado_esperado": "Hipótese: manter rejeição <= 55%. sem evidencia causal",
+    "metrica_acompanhamento": "taxa_rejeicao_pct",
+    "baseline": 54.79,
+    "unidade": "pct",
+    "prioridade": "media",
+    "score_prioridade": 7,
+    "relevancia": 2,
+    "urgencia": 2,
+    "acionabilidade": 3,
+    "confianca": "media",
+    "responsavel_sugerido": "produto",
+    "status": "nova",
+    "limitacoes": [
+      "Métrica ponderada por sessões.",
+      "sem evidencia causal"
+    ],
+    "aprovacao_humana_obrigatoria": true
+  },
+  {
+    "oportunidade_id": "OPP-003",
+    "titulo": "Acompanhar consultas com CTR e posição em melhoria",
+    "tipo": "busca",
+    "problema_observado": "Em 2026-06, CTR ponderado foi 3.72% e posição média 10.06, com 8225 cliques.",
+    "evidencias": [
+      "EVD-005",
+      "EVD-006",
+      "EVD-007"
+    ],
+    "acao_proposta": "Priorizar atualização dos conteúdos já associados às seis consultas mensais, medindo CTR e posição no mês seguinte.",
+    "resultado_esperado": "Hipótese: preservar a trajetória de mais cliques e melhor posição. sem evidencia causal",
+    "metrica_acompanhamento": "ctr_pct",
+    "baseline": 3.72,
+    "unidade": "pct",
+    "prioridade": "alta",
+    "score_prioridade": 8,
+    "relevancia": 3,
+    "urgencia": 2,
+    "acionabilidade": 3,
+    "confianca": "media",
+    "responsavel_sugerido": "seo",
+    "status": "nova",
+    "limitacoes": [
+      "Exportação sintética de busca.",
+      "ART025 e ART026 não existem no inventário de conteúdos."
+    ],
+    "aprovacao_humana_obrigatoria": true
+  },
+  {
+    "oportunidade_id": "OPP-004",
+    "titulo": "Reduzir o gap de SEO técnico e dados estruturados",
+    "tipo": "seo_tecnico",
+    "problema_observado": "Em 2026-06-28, SEO técnico próprio foi 77 contra 87 de concorrente_alpha; dados estruturados 70% contra 88%. Meta de 85 não atingida em 6 competências.",
+    "evidencias": [
+      "EVD-008",
+      "EVD-009",
+      "EVD-014"
+    ],
+    "acao_proposta": "Corrigir schema e FAQ no inventário já publicado, começando pelos conteúdos sem schema_article, e reaplicar a auditoria sintética no mês seguinte.",
+    "resultado_esperado": "Hipótese: aproximar seo_tecnico_score de 85. sem evidencia causal",
+    "metrica_acompanhamento": "seo_tecnico_score",
+    "baseline": 77.0,
+    "unidade": "pontos",
+    "prioridade": "alta",
+    "score_prioridade": 9,
+    "relevancia": 3,
+    "urgencia": 3,
+    "acionabilidade": 3,
+    "confianca": "media",
+    "responsavel_sugerido": "tecnologia",
+    "status": "nova",
+    "limitacoes": [
+      "Concorrentes fictícios.",
+      "Auditoria de 50 páginas."
+    ],
+    "aprovacao_humana_obrigatoria": true
+  },
+  {
+    "oportunidade_id": "OPP-005",
+    "titulo": "Aumentar cobertura de schema e FAQ no inventário",
+    "tipo": "conteudo",
+    "problema_observado": "83.33% dos conteúdos válidos têm schema e 16.67% têm FAQ.",
+    "evidencias": [
+      "EVD-012"
+    ],
+    "acao_proposta": "Completar schema_article e um bloco FAQ nos conteúdos sem o atributo, sem alterar o texto jornalístico.",
+    "resultado_esperado": "Hipótese: elevar a cobertura estruturada do catálogo. sem evidencia causal com audiência ou IA",
+    "metrica_acompanhamento": "schema_article_pct",
+    "baseline": 83.33,
+    "unidade": "pct",
+    "prioridade": "media",
+    "score_prioridade": 6,
+    "relevancia": 2,
+    "urgencia": 2,
+    "acionabilidade": 2,
+    "confianca": "alta",
+    "responsavel_sugerido": "editoria",
+    "status": "nova",
+    "limitacoes": [
+      "Inventário sintético.",
+      "sem evidencia causal"
+    ],
+    "aprovacao_humana_obrigatoria": true
+  },
+  {
+    "oportunidade_id": "OPP-006",
+    "titulo": "Repetir a amostra de IA com o mesmo protocolo",
+    "tipo": "visibilidade_ia",
+    "problema_observado": "Em 2026-06 o portal próprio foi citado em 4 de 10 testes (40.00%). A meta de 35% não foi atingida em 0 competências.",
+    "evidencias": [
+      "EVD-010",
+      "EVD-011"
+    ],
+    "acao_proposta": "Repetir as mesmas 10 perguntas e 2 mecanismos no próximo mês, registrando data, pergunta e domínio citado, sem generalizar o resultado.",
+    "resultado_esperado": "Hipótese: obter série comparável da amostra. Não é previsão de market share.",
+    "metrica_acompanhamento": "share_citacao_ia_pct",
+    "baseline": 40.0,
+    "unidade": "pct",
+    "prioridade": "media",
+    "score_prioridade": 6,
+    "relevancia": 2,
+    "urgencia": 2,
+    "acionabilidade": 2,
+    "confianca": "baixa",
+    "responsavel_sugerido": "dados",
+    "status": "nova",
+    "limitacoes": [
+      "Amostra de 10 testes por mês.",
+      "Mecanismos fictícios.",
+      "Não é market share universal."
+    ],
+    "aprovacao_humana_obrigatoria": true
+  },
+  {
+    "oportunidade_id": "OPP-007",
+    "titulo": "Corrigir páginas de busca sem conteúdo no inventário",
+    "tipo": "qualidade_dados",
+    "problema_observado": "Em 2026-06, search_console cita ART025 e ART026, que não existem em conteudos Silver. ART999 foi quarentenado por falta de data.",
+    "evidencias": [
+      "EVD-005"
+    ],
+    "acao_proposta": "Reconciliar pagina_id de busca com conteudo_id do inventário e quarentenar consultas órfãs até haver cadastro.",
+    "resultado_esperado": "Hipótese: eliminar quebra de chave entre busca e conteúdo.",
+    "metrica_acompanhamento": "consultas_orfas",
+    "baseline": 2,
+    "unidade": "qtd",
+    "prioridade": "media",
+    "score_prioridade": 7,
+    "relevancia": 2,
+    "urgencia": 2,
+    "acionabilidade": 3,
+    "confianca": "alta",
+    "responsavel_sugerido": "dados",
+    "status": "nova",
+    "limitacoes": [
+      "A evidência EVD-005 mede cliques, não a orfandade; a orfandade é observada no cruzamento Silver."
+    ],
+    "aprovacao_humana_obrigatoria": true
+  }
+]

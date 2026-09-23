@@ -1,0 +1,6 @@
+teste,status,detalhe
+gold_nao_vazio,PASS,6 clientes
+churn_nao_calculado,PASS,sem data_saida
+meta_churn_sem_evidencia,PASS,status sem evidencia
+sem_pii,PASS,apenas CLxx
+t99_isolado,PASS,SLA n/a

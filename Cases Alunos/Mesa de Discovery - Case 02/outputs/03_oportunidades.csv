@@ -1,0 +1,8 @@
+oportunidade_id,titulo,tipo,prioridade,score_prioridade,confianca,responsavel_sugerido,status,evidencias
+OPP-001,"Capturar evidência, requisito e aprovação no MVP",requisito,alta,9,alta,product_manager,nova,EVD-003|EVD-007
+OPP-002,Checklist único de onboarding por cliente,requisito,alta,9,media,operacoes,nova,EVD-003
+OPP-003,Operar o MVP sem API estável de CRM,restricao,alta,8,alta,tech_lead,nova,EVD-003|EVD-006
+OPP-004,Bloquear PII em ferramenta externa,restricao,alta,9,alta,juridico,nova,EVD-003
+OPP-005,Expor o conflito de prazo sem escolher um lado,conflito,media,7,alta,sponsor,nova,EVD-005
+OPP-006,Fechar a pergunta do aprovador oficial,pergunta_aberta,media,6,media,sponsor,nova,EVD-004|EVD-008
+OPP-007,Manter mobile nativo e CRM ao vivo fora do MVP,fora_de_escopo,media,6,alta,product_manager,nova,EVD-006

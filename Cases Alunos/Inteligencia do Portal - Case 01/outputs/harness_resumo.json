@@ -1,0 +1,147 @@
+{
+  "profile": {
+    "audiencia": {
+      "antes": 32,
+      "depois": 30,
+      "quarentena": 2,
+      "issues": {
+        "duplicata_exata": 1,
+        "editoria_desconhecida": 1,
+        "valor_nulo_ou_invalido": 1,
+        "valor_negativo": 1
+      }
+    },
+    "conteudos": {
+      "antes": 26,
+      "depois": 24,
+      "quarentena": 2,
+      "issues": {
+        "duplicata_exata": 1,
+        "data_publicacao_nula_ou_invalida": 1
+      }
+    },
+    "search_console": {
+      "antes": 37,
+      "depois": 36,
+      "quarentena": 1,
+      "issues": {
+        "medicao_ausente": 1
+      }
+    },
+    "auditoria_sites": {
+      "antes": 18,
+      "depois": 18,
+      "quarentena": 0,
+      "issues": {}
+    },
+    "visibilidade_ia": {
+      "antes": 60,
+      "depois": 60,
+      "quarentena": 0,
+      "issues": {}
+    },
+    "metas": {
+      "antes": 5,
+      "depois": 5,
+      "quarentena": 0,
+      "issues": {}
+    }
+  },
+  "kpis": [
+    {
+      "ano_mes": "2026-01",
+      "usuarios_mensais": "201673",
+      "sessoes": "240127",
+      "pageviews": "372060",
+      "assinaturas_atribuidas": "123",
+      "sessoes_por_usuario": "1.19",
+      "pageviews_por_sessao": "1.55",
+      "tempo_medio_seg": "186.80",
+      "taxa_rejeicao_pct": "58.29"
+    },
+    {
+      "ano_mes": "2026-02",
+      "usuarios_mensais": "220007",
+      "sessoes": "261957",
+      "pageviews": "405885",
+      "assinaturas_atribuidas": "138",
+      "sessoes_por_usuario": "1.19",
+      "pageviews_por_sessao": "1.55",
+      "tempo_medio_seg": "189.80",
+      "taxa_rejeicao_pct": "57.59"
+    },
+    {
+      "ano_mes": "2026-03",
+      "usuarios_mensais": "238341",
+      "sessoes": "283786",
+      "pageviews": "439707",
+      "assinaturas_atribuidas": "154",
+      "sessoes_por_usuario": "1.19",
+      "pageviews_por_sessao": "1.55",
+      "tempo_medio_seg": "192.80",
+      "taxa_rejeicao_pct": "56.89"
+    },
+    {
+      "ano_mes": "2026-04",
+      "usuarios_mensais": "252091",
+      "sessoes": "300159",
+      "pageviews": "465076",
+      "assinaturas_atribuidas": "166",
+      "sessoes_por_usuario": "1.19",
+      "pageviews_por_sessao": "1.55",
+      "tempo_medio_seg": "195.80",
+      "taxa_rejeicao_pct": "56.23"
+    },
+    {
+      "ano_mes": "2026-05",
+      "usuarios_mensais": "236049",
+      "sessoes": "281057",
+      "pageviews": "435478",
+      "assinaturas_atribuidas": "162",
+      "sessoes_por_usuario": "1.19",
+      "pageviews_por_sessao": "1.55",
+      "tempo_medio_seg": "198.80",
+      "taxa_rejeicao_pct": "55.49"
+    },
+    {
+      "ano_mes": "2026-06",
+      "usuarios_mensais": "265842",
+      "sessoes": "316533",
+      "pageviews": "490445",
+      "assinaturas_atribuidas": "183",
+      "sessoes_por_usuario": "1.19",
+      "pageviews_por_sessao": "1.55",
+      "tempo_medio_seg": "201.80",
+      "taxa_rejeicao_pct": "54.79"
+    }
+  ],
+  "tests": [
+    {
+      "teste": "gold_nao_vazio",
+      "status": "PASS",
+      "detalhe": "6 competencias"
+    },
+    {
+      "teste": "mix_fecha_100",
+      "status": "PASS",
+      "detalhe": "0 divergencias"
+    },
+    {
+      "teste": "sem_pii",
+      "status": "PASS",
+      "detalhe": "0 colunas proibidas"
+    },
+    {
+      "teste": "metas_respeitam_vigencia",
+      "status": "PASS",
+      "detalhe": "30 comparacoes"
+    },
+    {
+      "teste": "ia_nao_e_market_share",
+      "status": "PASS",
+      "detalhe": "limitacao registrada"
+    }
+  ],
+  "n_evidencias": 15,
+  "n_ops": 7
+}

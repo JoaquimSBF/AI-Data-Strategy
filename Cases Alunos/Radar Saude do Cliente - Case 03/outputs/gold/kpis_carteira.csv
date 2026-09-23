@@ -1,0 +1,5 @@
+kpi,valor,unidade,nota
+clientes_validos,6,qtd,Silver após quarentena
+clientes_com_sinal_alto,3,qtd,score >= 4
+tickets_sla_estourado,4,qtd,Silver com sla_estourado=true
+churn_clientes_pct,sem evidencia,pct,sem data_saida e sem historico de status

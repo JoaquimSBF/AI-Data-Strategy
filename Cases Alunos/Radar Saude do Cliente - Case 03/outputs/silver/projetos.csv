@@ -1,0 +1,7 @@
+projeto_id,cliente_id,fase,prazo,situacao,atraso_dias
+PR01,CL01,implantacao,2026-04-30,no_prazo,0
+PR02,CL02,implantacao,2026-03-30,atrasado,21
+PR03,CL03,operacao,2026-06-15,no_prazo,0
+PR04,CL04,encerramento,2026-02-28,atrasado,45
+PR05,CL05,descoberta,2026-05-15,no_prazo,0
+PR06,CL06,operacao,2026-01-31,pausado,12

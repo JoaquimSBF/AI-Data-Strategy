@@ -1,0 +1,6 @@
+tabela,chave,motivo,origem
+clientes,CL06,duplicata_exata,linha 8
+clientes,CL99,segmento_desconhecido|data_entrada_nula_ou_invalida,linha 9
+projetos,PR99,cliente_invalido|fase_desconhecida|atraso_invalido,linha 8
+tickets,T99,sla_invalido,linha 8
+nps,CL04,nps_invalido,linha 5

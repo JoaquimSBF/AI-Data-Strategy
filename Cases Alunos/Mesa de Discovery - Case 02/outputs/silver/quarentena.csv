@@ -1,0 +1,4 @@
+tabela,chave,motivo,origem
+reunioes,R05,duplicata_exata,linha 7
+reunioes,R99,data_nula_ou_invalida,linha 8
+evidencias,E99,reuniao_invalida|texto_adversario|confiabilidade_invalida,linha 13

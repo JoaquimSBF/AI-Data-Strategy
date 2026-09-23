@@ -1,0 +1,87 @@
+{
+  "profile": {
+    "clientes": {
+      "antes": 8,
+      "depois": 6,
+      "quarentena": 2,
+      "issues": {
+        "duplicata_exata": 1,
+        "segmento_desconhecido": 1,
+        "data_entrada_nula_ou_invalida": 1
+      }
+    },
+    "projetos": {
+      "antes": 7,
+      "depois": 6,
+      "quarentena": 1,
+      "issues": {
+        "cliente_invalido": 1,
+        "fase_desconhecida": 1,
+        "atraso_invalido": 1
+      }
+    },
+    "eventos": {
+      "antes": 8,
+      "depois": 8,
+      "quarentena": 0,
+      "issues": {}
+    },
+    "tickets": {
+      "antes": 7,
+      "depois": 6,
+      "quarentena": 1,
+      "issues": {
+        "sla_invalido": 1
+      }
+    },
+    "nps": {
+      "antes": 5,
+      "depois": 4,
+      "quarentena": 1,
+      "issues": {
+        "nps_invalido": 1
+      }
+    },
+    "metas": {
+      "antes": 3,
+      "depois": 3,
+      "quarentena": 0,
+      "issues": {}
+    }
+  },
+  "kpis": {
+    "clientes_validos": "6",
+    "clientes_com_sinal_alto": "3",
+    "tickets_sla_estourado": "4",
+    "churn_clientes_pct": "None"
+  },
+  "tests": [
+    {
+      "teste": "gold_nao_vazio",
+      "status": "PASS",
+      "detalhe": "6 clientes"
+    },
+    {
+      "teste": "churn_nao_calculado",
+      "status": "PASS",
+      "detalhe": "sem data_saida"
+    },
+    {
+      "teste": "meta_churn_sem_evidencia",
+      "status": "PASS",
+      "detalhe": "status sem evidencia"
+    },
+    {
+      "teste": "sem_pii",
+      "status": "PASS",
+      "detalhe": "apenas CLxx"
+    },
+    {
+      "teste": "t99_isolado",
+      "status": "PASS",
+      "detalhe": "SLA n/a"
+    }
+  ],
+  "n_evidencias": 9,
+  "n_ops": 6
+}

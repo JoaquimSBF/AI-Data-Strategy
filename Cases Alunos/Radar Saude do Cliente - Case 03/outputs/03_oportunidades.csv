@@ -1,0 +1,7 @@
+oportunidade_id,titulo,tipo,prioridade,score_prioridade,confianca,responsavel_sugerido,status,cliente_id,evidencias
+OPP-001,Plano imediato para CL02,acao_carteira,alta,9,media,cs_enterprise,nova,CL02,EVD-004|EVD-003
+OPP-002,Revisar CL04 inativo sem data de saída,acao_carteira,alta,8,media,operacoes,nova,CL04,EVD-005|EVD-007
+OPP-003,Plano para CL06 com NPS 15 e ticket crítico,acao_carteira,alta,8,media,cs_enterprise,nova,CL06,EVD-006
+OPP-004,Coletar NPS de CL04 e CL05,qualidade_dados,media,7,alta,dados,nova,,EVD-008
+OPP-005,Tratar o gap de tickets com SLA estourado,operacao,media,7,media,suporte,nova,,EVD-003|EVD-009
+OPP-006,Manter churn como sem evidencia no produto,governanca,alta,8,alta,dados,nova,,EVD-007

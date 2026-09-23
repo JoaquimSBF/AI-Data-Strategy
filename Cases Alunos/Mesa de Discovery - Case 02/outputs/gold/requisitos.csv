@@ -1,0 +1,8 @@
+requisito_id,evidencia_id,reuniao_id,titulo,tipo,confiabilidade,status,criterio_aceite,papel_aprovador
+REQ-001,E01,R01,Onboarding de novos times leva mais de 20 dias úteis.,problema,alta,candidato,Implementação validada contra a evidência E01.,nao_definido
+REQ-002,E02,R01,Reduzir o tempo até o primeiro uso supervisionado.,objetivo,alta,candidato,Implementação validada contra a evidência E02.,nao_definido
+REQ-003,E03,R02,CRM atual não expõe API estável de contas.,sistema,media,candidato,Implementação validada contra a evidência E03.,nao_definido
+REQ-004,E04,R02,Não haverá troca de CRM neste semestre.,restricao,alta,candidato,Implementação validada contra a evidência E04.,nao_definido
+REQ-005,E05,R03,Operações precisa de checklist único por cliente.,usuario,alta,candidato,Implementação validada contra a evidência E05.,nao_definido
+REQ-006,E07,R04,PII de clientes reais não pode ir para ferramenta externa.,restricao,alta,candidato,Implementação validada contra a evidência E07.,juridico
+REQ-007,E09,R05,"MVP deve cobrir captura, rastreio e aprovação de requisito.",prioridade,alta,candidato,Implementação validada contra a evidência E09.,nao_definido

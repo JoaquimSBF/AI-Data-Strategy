@@ -1,0 +1,25 @@
+conteudo_id,data_publicacao,editoria,formato,titulo_sintetico,autor_pseudo,palavras,data_atualizacao,schema_article,faq_presente,fontes_externas_qtd,status,data_referencia
+ART001,2026-01-04,politica,noticia,Conteúdo sintético 01 sobre Política,AUTOR_01,557,,true,false,2,publicado,2026-01-04
+ART002,2026-02-07,economia,analise,Conteúdo sintético 02 sobre Economia,AUTOR_02,594,,true,false,4,publicado,2026-02-07
+ART003,2026-03-10,tecnologia,explicador,Conteúdo sintético 03 sobre Tecnologia,AUTOR_03,631,,true,false,6,publicado,2026-03-10
+ART004,2026-04-13,esportes,entrevista,Conteúdo sintético 04 sobre Esportes,AUTOR_04,668,2026-05-15,true,false,1,publicado,2026-05-15
+ART005,2026-05-16,cultura,noticia,Conteúdo sintético 05 sobre Cultura,AUTOR_05,705,,false,false,3,publicado,2026-05-16
+ART006,2026-06-19,politica,analise,Conteúdo sintético 06 sobre Política,AUTOR_06,742,,true,true,5,publicado,2026-06-19
+ART007,2026-01-22,economia,explicador,Conteúdo sintético 07 sobre Economia,AUTOR_01,779,,true,false,0,publicado,2026-01-22
+ART008,2026-02-25,tecnologia,entrevista,Conteúdo sintético 08 sobre Tecnologia,AUTOR_02,816,2026-03-27,true,false,2,publicado,2026-03-27
+ART009,2026-03-01,esportes,noticia,Conteúdo sintético 09 sobre Esportes,AUTOR_03,853,,true,false,4,publicado,2026-03-01
+ART010,2026-04-04,cultura,analise,Conteúdo sintético 10 sobre Cultura,AUTOR_04,890,,false,false,6,publicado,2026-04-04
+ART011,2026-05-07,politica,explicador,Conteúdo sintético 11 sobre Política,AUTOR_05,927,,true,false,1,publicado,2026-05-07
+ART012,2026-06-10,economia,entrevista,Conteúdo sintético 12 sobre Economia,AUTOR_06,964,2026-06-12,true,true,3,publicado,2026-06-12
+ART013,2026-01-13,tecnologia,noticia,Conteúdo sintético 13 sobre Tecnologia,AUTOR_01,1001,,true,false,5,publicado,2026-01-13
+ART014,2026-02-16,esportes,analise,Conteúdo sintético 14 sobre Esportes,AUTOR_02,1038,,true,false,0,publicado,2026-02-16
+ART015,2026-03-19,cultura,explicador,Conteúdo sintético 15 sobre Cultura,AUTOR_03,1075,,false,false,2,publicado,2026-03-19
+ART016,2026-04-22,politica,entrevista,Conteúdo sintético 16 sobre Política,AUTOR_04,1112,2026-05-24,true,false,4,publicado,2026-05-24
+ART017,2026-05-25,economia,noticia,Conteúdo sintético 17 sobre Economia,AUTOR_05,1149,,true,false,6,publicado,2026-05-25
+ART018,2026-06-01,tecnologia,analise,Conteúdo sintético 18 sobre Tecnologia,AUTOR_06,1186,,true,true,1,publicado,2026-06-01
+ART019,2026-01-04,esportes,explicador,Conteúdo sintético 19 sobre Esportes,AUTOR_01,1223,,true,false,3,publicado,2026-01-04
+ART020,2026-02-07,cultura,entrevista,Conteúdo sintético 20 sobre Cultura,AUTOR_02,1260,2026-03-09,false,false,5,publicado,2026-03-09
+ART021,2026-03-10,politica,noticia,Conteúdo sintético 21 sobre Política,AUTOR_03,1297,,true,false,0,publicado,2026-03-10
+ART022,2026-04-13,economia,analise,Conteúdo sintético 22 sobre Economia,AUTOR_04,1334,,true,false,2,publicado,2026-04-13
+ART023,2026-05-16,tecnologia,explicador,Conteúdo sintético 23 sobre Tecnologia,AUTOR_05,1371,,true,false,4,publicado,2026-05-16
+ART024,2026-06-19,esportes,entrevista,Conteúdo sintético 24 sobre Esportes,AUTOR_06,1408,2026-06-21,true,true,6,publicado,2026-06-21

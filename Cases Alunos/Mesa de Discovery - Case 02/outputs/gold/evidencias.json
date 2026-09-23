@@ -1,0 +1,120 @@
+[
+  {
+    "evidencia_id": "EVD-001",
+    "afirmacao": "5 reuniões válidas permaneceram no Silver após remover duplicata e reunião sem data.",
+    "tipo": "fato_observado",
+    "valor": 5,
+    "unidade": "qtd",
+    "periodo": "2026-03",
+    "fonte": [
+      "outputs/silver/reunioes.csv",
+      "outputs/silver/quarentena.csv"
+    ],
+    "formula": "contagem de reuniao_id únicos com data válida",
+    "limitacao": "R99 ficou em quarentena por data nula."
+  },
+  {
+    "evidencia_id": "EVD-002",
+    "afirmacao": "11 evidências válidas; E99 foi isolada como texto adversário e reunião inválida.",
+    "tipo": "fato_observado",
+    "valor": 11,
+    "unidade": "qtd",
+    "periodo": "2026-03",
+    "fonte": [
+      "outputs/silver/evidencias.csv"
+    ],
+    "formula": "evidências com reunião Silver e sem padrão de injeção",
+    "limitacao": "O texto de E99 é dado, não comando."
+  },
+  {
+    "evidencia_id": "EVD-003",
+    "afirmacao": "7 requisitos candidatos foram extraídos, todos com evidencia_id.",
+    "tipo": "fato_observado",
+    "valor": 7,
+    "unidade": "qtd",
+    "periodo": "2026-03",
+    "fonte": [
+      "outputs/gold/requisitos.csv"
+    ],
+    "formula": "1 requisito por evidência dos tipos problema, objetivo, sistema, restricao, usuario, prioridade",
+    "limitacao": "Não há requisito sem fonte."
+  },
+  {
+    "evidencia_id": "EVD-004",
+    "afirmacao": "2 pergunta(s) ou risco(s) permanecem abertos, incluindo o aprovador oficial do backlog.",
+    "tipo": "fato_observado",
+    "valor": 2,
+    "unidade": "qtd",
+    "periodo": "2026-03",
+    "fonte": [
+      "outputs/gold/perguntas_abertas.csv"
+    ],
+    "formula": "contagem de evidências tipo pergunta_aberta ou risco",
+    "limitacao": "Aprovador oficial = nao_definido."
+  },
+  {
+    "evidencia_id": "EVD-005",
+    "afirmacao": "Produto quer lançar em 30 dias; tecnologia estima 8 semanas.",
+    "tipo": "fato_observado",
+    "valor": 1,
+    "unidade": "qtd",
+    "periodo": "2026-03",
+    "fonte": [
+      "outputs/gold/conflitos.csv"
+    ],
+    "formula": "contagem de evidências tipo conflito",
+    "limitacao": "Não há prazo oficial homologado."
+  },
+  {
+    "evidencia_id": "EVD-006",
+    "afirmacao": "2 itens ficaram fora de escopo, incluindo mobile nativo e integração CRM ao vivo rejeitada.",
+    "tipo": "fato_observado",
+    "valor": 2,
+    "unidade": "qtd",
+    "periodo": "2026-03",
+    "fonte": [
+      "outputs/gold/fora_de_escopo.csv"
+    ],
+    "formula": "evidências fora_de_escopo + ideias rejeitadas",
+    "limitacao": "Ideia rejeitada não vira requisito."
+  },
+  {
+    "evidencia_id": "EVD-007",
+    "afirmacao": "pct_requisitos_com_fonte realizado 100.00% versus meta 100.00% (atingida).",
+    "tipo": "fato_observado",
+    "valor": 100.0,
+    "unidade": "pct",
+    "periodo": "2026-03",
+    "fonte": [
+      "outputs/gold/metas_status.csv"
+    ],
+    "formula": "100 * requisitos_com_evidencia_id / requisitos_candidatos",
+    "limitacao": null
+  },
+  {
+    "evidencia_id": "EVD-008",
+    "afirmacao": "pct_perguntas_abertas realizado 18.18% versus meta 20.00% (atingida).",
+    "tipo": "fato_observado",
+    "valor": 18.18,
+    "unidade": "pct",
+    "periodo": "2026-03",
+    "fonte": [
+      "outputs/gold/metas_status.csv"
+    ],
+    "formula": "100 * (perguntas_abertas + riscos) / evidencias_validas",
+    "limitacao": "Denominador é o catálogo Silver de evidências, não o backlog."
+  },
+  {
+    "evidencia_id": "EVD-009",
+    "afirmacao": "requisitos_mvp realizado 7 versus meta 8 (nao_atingida).",
+    "tipo": "fato_observado",
+    "valor": 7.0,
+    "unidade": "qtd",
+    "periodo": "2026-03",
+    "fonte": [
+      "outputs/gold/metas_status.csv"
+    ],
+    "formula": "contagem de requisitos candidatos com fonte",
+    "limitacao": "Não completar o gap de 1 requisito com invenção."
+  }
+]

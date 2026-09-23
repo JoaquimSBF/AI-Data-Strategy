@@ -1,0 +1,6 @@
+papel_id,papel,area,influencia,obrigatorio_aprovacao
+P01,sponsor,negocio,alta,true
+P02,product_manager,produto,alta,true
+P03,tech_lead,tecnologia,media,false
+P04,juridico,juridico,alta,true
+P05,operacoes,operacoes,media,false

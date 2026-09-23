@@ -1,0 +1,168 @@
+[
+  {
+    "oportunidade_id": "OPP-001",
+    "titulo": "Plano imediato para CL02",
+    "tipo": "acao_carteira",
+    "problema_observado": "CL02 (enterprise, ativo) tem score 5: atraso 21 dias, 2 ausências, 2 tickets abertos, NPS 28.",
+    "evidencias": [
+      "EVD-004",
+      "EVD-003"
+    ],
+    "acao_proposta": "Reagendar QBR, tratar tickets abertos com SLA estourado e registrar pendências no workspace.",
+    "resultado_esperado": "Hipótese: reduzir score_risco de CL02. sem evidencia causal",
+    "metrica_acompanhamento": "score_risco_CL02",
+    "baseline": 5,
+    "unidade": "sinais",
+    "prioridade": "alta",
+    "score_prioridade": 9,
+    "relevancia": 3,
+    "urgencia": 3,
+    "acionabilidade": 3,
+    "confianca": "media",
+    "responsavel_sugerido": "cs_enterprise",
+    "status": "nova",
+    "cliente_id": "CL02",
+    "limitacoes": [
+      "Score não é probabilidade.",
+      "sem evidencia causal"
+    ],
+    "aprovacao_humana_obrigatoria": true
+  },
+  {
+    "oportunidade_id": "OPP-002",
+    "titulo": "Revisar CL04 inativo sem data de saída",
+    "tipo": "acao_carteira",
+    "problema_observado": "CL04 está inativo no snapshot, com atraso máximo 45 dias e NPS sem evidencia.",
+    "evidencias": [
+      "EVD-005",
+      "EVD-007"
+    ],
+    "acao_proposta": "Confirmar com operações se CL04 está pausado, encerrado ou só com status inconsistente. Não rotular churn.",
+    "resultado_esperado": "Status humano confirmado. churn continua sem evidencia.",
+    "metrica_acompanhamento": "status_CL04",
+    "baseline": "inativo",
+    "unidade": "status",
+    "prioridade": "alta",
+    "score_prioridade": 8,
+    "relevancia": 3,
+    "urgencia": 3,
+    "acionabilidade": 2,
+    "confianca": "media",
+    "responsavel_sugerido": "operacoes",
+    "status": "nova",
+    "cliente_id": "CL04",
+    "limitacoes": [
+      "Snapshot sem data_saida."
+    ],
+    "aprovacao_humana_obrigatoria": true
+  },
+  {
+    "oportunidade_id": "OPP-003",
+    "titulo": "Plano para CL06 com NPS 15 e ticket crítico",
+    "tipo": "acao_carteira",
+    "problema_observado": "CL06 está inativo, NPS 15, 1 ticket(s) aberto(s) e 1 ausência(s).",
+    "evidencias": [
+      "EVD-006"
+    ],
+    "acao_proposta": "Abrir plano de recuperação com papéis de CS e suporte. Não pedir cancelamento.",
+    "resultado_esperado": "Hipótese: tratar sinais visíveis. sem evidencia causal",
+    "metrica_acompanhamento": "score_risco_CL06",
+    "baseline": 6,
+    "unidade": "sinais",
+    "prioridade": "alta",
+    "score_prioridade": 8,
+    "relevancia": 3,
+    "urgencia": 3,
+    "acionabilidade": 2,
+    "confianca": "media",
+    "responsavel_sugerido": "cs_enterprise",
+    "status": "nova",
+    "cliente_id": "CL06",
+    "limitacoes": [
+      "Inativo no snapshot ≠ churn confirmado."
+    ],
+    "aprovacao_humana_obrigatoria": true
+  },
+  {
+    "oportunidade_id": "OPP-004",
+    "titulo": "Coletar NPS de CL04 e CL05",
+    "tipo": "qualidade_dados",
+    "problema_observado": "NPS ausente para CL04, CL05 após isolamento de n/a.",
+    "evidencias": [
+      "EVD-008"
+    ],
+    "acao_proposta": "Registrar nova pesquisa. Não imputar NPS.",
+    "resultado_esperado": "Hipótese: eliminar nps_ausente.",
+    "metrica_acompanhamento": "clientes_sem_nps",
+    "baseline": 2,
+    "unidade": "qtd",
+    "prioridade": "media",
+    "score_prioridade": 7,
+    "relevancia": 2,
+    "urgencia": 2,
+    "acionabilidade": 3,
+    "confianca": "alta",
+    "responsavel_sugerido": "dados",
+    "status": "nova",
+    "cliente_id": "",
+    "limitacoes": [
+      "CL04 n/a foi quarentenado; CL05 não tinha linha."
+    ],
+    "aprovacao_humana_obrigatoria": true
+  },
+  {
+    "oportunidade_id": "OPP-005",
+    "titulo": "Tratar o gap de tickets com SLA estourado",
+    "tipo": "operacao",
+    "problema_observado": "4 tickets com SLA estourado versus meta 2 (nao_atingida).",
+    "evidencias": [
+      "EVD-003",
+      "EVD-009"
+    ],
+    "acao_proposta": "Priorizar tickets abertos de CL02, CL04 e CL06 no kanban do produto.",
+    "resultado_esperado": "Hipótese: aproximar a meta de 2 tickets com SLA estourado. sem evidencia causal",
+    "metrica_acompanhamento": "tickets_sla_estourado",
+    "baseline": 4,
+    "unidade": "qtd",
+    "prioridade": "media",
+    "score_prioridade": 7,
+    "relevancia": 3,
+    "urgencia": 2,
+    "acionabilidade": 2,
+    "confianca": "media",
+    "responsavel_sugerido": "suporte",
+    "status": "nova",
+    "cliente_id": "",
+    "limitacoes": [
+      "T99 não entra na conta."
+    ],
+    "aprovacao_humana_obrigatoria": true
+  },
+  {
+    "oportunidade_id": "OPP-006",
+    "titulo": "Manter churn como sem evidencia no produto",
+    "tipo": "governanca",
+    "problema_observado": "churn_clientes_pct é sem evidencia: não há data_saida nem histórico de status.",
+    "evidencias": [
+      "EVD-007"
+    ],
+    "acao_proposta": "Exibir a meta de churn com status sem evidencia. Bloquear rótulo de probabilidade.",
+    "resultado_esperado": "Produto não inventa churn.",
+    "metrica_acompanhamento": "churn_clientes_pct",
+    "baseline": "sem evidencia",
+    "unidade": "pct",
+    "prioridade": "alta",
+    "score_prioridade": 8,
+    "relevancia": 3,
+    "urgencia": 2,
+    "acionabilidade": 3,
+    "confianca": "alta",
+    "responsavel_sugerido": "dados",
+    "status": "nova",
+    "cliente_id": "",
+    "limitacoes": [
+      "Sem histórico de status e sem data_saida."
+    ],
+    "aprovacao_humana_obrigatoria": true
+  }
+]

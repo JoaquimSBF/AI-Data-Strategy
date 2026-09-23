@@ -1,0 +1,5 @@
+sistema_id,sistema,criticidade,status,tem_api
+S01,CRM legado,alta,ativo,parcial
+S02,Helpdesk,media,ativo,sim
+S03,Data lake interno,alta,ativo,nao
+S04,Planilha compartilhada,baixa,ativo,nao

@@ -1,0 +1,122 @@
+[
+  {
+    "evidencia_id": "EVD-001",
+    "afirmacao": "6 clientes permaneceram no Silver após duplicata e segmento TESTE.",
+    "tipo": "fato_observado",
+    "valor": 6,
+    "unidade": "qtd",
+    "periodo": "carteira_sintetica",
+    "fonte": [
+      "outputs/silver/clientes.csv"
+    ],
+    "formula": "contagem de cliente_id únicos com data_entrada e segmento canônico",
+    "limitacao": "CL99 isolado. data_saida vazia em todos."
+  },
+  {
+    "evidencia_id": "EVD-002",
+    "afirmacao": "3 clientes com sinal alto: CL02, CL04, CL06.",
+    "tipo": "fato_observado",
+    "valor": 3,
+    "unidade": "qtd",
+    "periodo": "2026-01 a 2026-03",
+    "fonte": [
+      "outputs/gold/sinais_cliente.csv"
+    ],
+    "formula": "score_risco = soma de flags binários (atraso, ausência, ticket aberto, SLA, NPS<50, inativo); alto se score >= 4",
+    "limitacao": "Score não é probabilidade de churn."
+  },
+  {
+    "evidencia_id": "EVD-003",
+    "afirmacao": "4 tickets com SLA estourado versus meta 2 (nao_atingida).",
+    "tipo": "fato_observado",
+    "valor": 4.0,
+    "unidade": "qtd",
+    "periodo": "2026-01 a 2026-03",
+    "fonte": [
+      "outputs/gold/metas_status.csv",
+      "outputs/silver/tickets.csv"
+    ],
+    "formula": "contagem de tickets Silver com sla_estourado=true",
+    "limitacao": "T99 isolado por SLA n/a."
+  },
+  {
+    "evidencia_id": "EVD-004",
+    "afirmacao": "CL02 (enterprise, ativo) tem score 5: atraso 21 dias, 2 ausências, 2 tickets abertos, NPS 28.",
+    "tipo": "fato_observado",
+    "valor": 5,
+    "unidade": "sinais",
+    "periodo": "2026-02 a 2026-03",
+    "fonte": [
+      "outputs/gold/sinais_cliente.csv"
+    ],
+    "formula": "flags de CL02 no Gold",
+    "limitacao": "NPS 28 é pesquisa pontual, não série."
+  },
+  {
+    "evidencia_id": "EVD-005",
+    "afirmacao": "CL04 está inativo no snapshot, com atraso máximo 45 dias e NPS sem evidencia.",
+    "tipo": "fato_observado",
+    "valor": 5,
+    "unidade": "sinais",
+    "periodo": "snapshot",
+    "fonte": [
+      "outputs/gold/sinais_cliente.csv"
+    ],
+    "formula": "status canônico de 'I' = inativo; NPS n/a isolado",
+    "limitacao": "Inativo no snapshot não prova churn temporal."
+  },
+  {
+    "evidencia_id": "EVD-006",
+    "afirmacao": "CL06 está inativo, NPS 15, 1 ticket(s) aberto(s) e 1 ausência(s).",
+    "tipo": "fato_observado",
+    "valor": 6,
+    "unidade": "sinais",
+    "periodo": "2026-01",
+    "fonte": [
+      "outputs/gold/sinais_cliente.csv"
+    ],
+    "formula": "flags de CL06",
+    "limitacao": "Sem data_saida; não classificar como churn confirmado."
+  },
+  {
+    "evidencia_id": "EVD-007",
+    "afirmacao": "churn_clientes_pct é sem evidencia: não há data_saida nem histórico de status.",
+    "tipo": "lacuna",
+    "valor": null,
+    "unidade": "pct",
+    "periodo": "2026-01 a 2026-03",
+    "fonte": [
+      "outputs/gold/metas_status.csv",
+      "outputs/silver/clientes.csv"
+    ],
+    "formula": "sem data_saida preenchida e sem série temporal de status",
+    "limitacao": "Não calcular probabilidade de churn."
+  },
+  {
+    "evidencia_id": "EVD-008",
+    "afirmacao": "NPS ausente para CL04, CL05 após isolamento de n/a.",
+    "tipo": "fato_observado",
+    "valor": 2,
+    "unidade": "qtd",
+    "periodo": "2026-01 a 2026-03",
+    "fonte": [
+      "outputs/silver/nps.csv",
+      "outputs/silver/quarentena.csv"
+    ],
+    "formula": "clientes Silver sem linha NPS válida",
+    "limitacao": "Ausência não é imputada."
+  },
+  {
+    "evidencia_id": "EVD-009",
+    "afirmacao": "clientes_com_sinal_alto realizado 3 versus meta 2 (nao_atingida).",
+    "tipo": "fato_observado",
+    "valor": 3.0,
+    "unidade": "qtd",
+    "periodo": "2026-01 a 2026-03",
+    "fonte": [
+      "outputs/gold/metas_status.csv"
+    ],
+    "formula": "contagem de nivel_sinal=alto",
+    "limitacao": "Sinal alto ≠ churn."
+  }
+]

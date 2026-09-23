@@ -1,6 +1,6 @@
 .env
 *.duckdb
-outputs/
+/outputs/
 data/silver/
 data/gold/
 __pycache__/

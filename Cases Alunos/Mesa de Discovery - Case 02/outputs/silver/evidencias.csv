@@ -1,0 +1,12 @@
+evidencia_id,reuniao_id,tipo,texto,confiabilidade
+E01,R01,problema,Onboarding de novos times leva mais de 20 dias úteis.,alta
+E02,R01,objetivo,Reduzir o tempo até o primeiro uso supervisionado.,alta
+E03,R02,sistema,CRM atual não expõe API estável de contas.,media
+E04,R02,restricao,Não haverá troca de CRM neste semestre.,alta
+E05,R03,usuario,Operações precisa de checklist único por cliente.,alta
+E06,R03,fora_de_escopo,App mobile nativo ficou fora do MVP.,alta
+E07,R04,restricao,PII de clientes reais não pode ir para ferramenta externa.,alta
+E08,R04,risco,Há dúvida se o jurídico aprova histórico de conversas.,media
+E09,R05,prioridade,"MVP deve cobrir captura, rastreio e aprovação de requisito.",alta
+E10,R05,pergunta_aberta,Quem é o aprovador oficial do backlog?,baixa
+E11,R05,conflito,Produto quer lançar em 30 dias; tecnologia estima 8 semanas.,alta

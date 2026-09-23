@@ -1,0 +1,8 @@
+oportunidade_id,titulo,tipo,prioridade,score_prioridade,confianca,responsavel_sugerido,status,evidencias
+OPP-001,Fechar o gap de usuários versus a meta vigente,audiencia,alta,8,media,editoria,nova,EVD-001|EVD-013
+OPP-002,Sustentar a queda da rejeição já abaixo da meta,engajamento,media,7,media,produto,nova,EVD-003|EVD-015
+OPP-003,Acompanhar consultas com CTR e posição em melhoria,busca,alta,8,media,seo,nova,EVD-005|EVD-006|EVD-007
+OPP-004,Reduzir o gap de SEO técnico e dados estruturados,seo_tecnico,alta,9,media,tecnologia,nova,EVD-008|EVD-009|EVD-014
+OPP-005,Aumentar cobertura de schema e FAQ no inventário,conteudo,media,6,alta,editoria,nova,EVD-012
+OPP-006,Repetir a amostra de IA com o mesmo protocolo,visibilidade_ia,media,6,baixa,dados,nova,EVD-010|EVD-011
+OPP-007,Corrigir páginas de busca sem conteúdo no inventário,qualidade_dados,media,7,alta,dados,nova,EVD-005

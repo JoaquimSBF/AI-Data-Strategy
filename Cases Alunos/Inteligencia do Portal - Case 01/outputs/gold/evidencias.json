@@ -1,0 +1,197 @@
+[
+  {
+    "evidencia_id": "EVD-001",
+    "afirmacao": "Usuários mensais passaram de 201673 em 2026-01 para 265842 em 2026-06.",
+    "tipo": "fato_observado",
+    "valor": 265842.0,
+    "unidade": "qtd",
+    "periodo": "2026-01 a 2026-06",
+    "fonte": [
+      "outputs/gold/kpis_mensais.csv"
+    ],
+    "formula": "soma(usuarios) por ano_mes, premissa de atribuição exclusiva",
+    "limitacao": "Premissa sintética; não transportar para dados reais."
+  },
+  {
+    "evidencia_id": "EVD-002",
+    "afirmacao": "Tempo médio ponderado por sessões em 2026-06 foi 201.80 segundos.",
+    "tipo": "fato_observado",
+    "valor": 201.8,
+    "unidade": "seg",
+    "periodo": "2026-06",
+    "fonte": [
+      "outputs/gold/kpis_mensais.csv"
+    ],
+    "formula": "soma(tempo_medio_seg * sessoes) / soma(sessoes)",
+    "limitacao": null
+  },
+  {
+    "evidencia_id": "EVD-003",
+    "afirmacao": "Taxa de rejeição ponderada em 2026-06 foi 54.79%.",
+    "tipo": "fato_observado",
+    "valor": 54.79,
+    "unidade": "pct",
+    "periodo": "2026-06",
+    "fonte": [
+      "outputs/gold/kpis_mensais.csv"
+    ],
+    "formula": "soma(taxa_rejeicao_pct * sessoes) / soma(sessoes)",
+    "limitacao": null
+  },
+  {
+    "evidencia_id": "EVD-004",
+    "afirmacao": "Em 2026-06, politica concentrou 25.3083% dos usuários.",
+    "tipo": "fato_observado",
+    "valor": 25.3083,
+    "unidade": "pct",
+    "periodo": "2026-06",
+    "fonte": [
+      "outputs/gold/mix_editoria.csv"
+    ],
+    "formula": "100 * usuarios_editoria / usuarios_mensais",
+    "limitacao": null
+  },
+  {
+    "evidencia_id": "EVD-005",
+    "afirmacao": "Cliques de busca passaram de 2923 em 2026-01 para 8225 em 2026-06.",
+    "tipo": "fato_observado",
+    "valor": 8225.0,
+    "unidade": "qtd",
+    "periodo": "2026-01 a 2026-06",
+    "fonte": [
+      "outputs/gold/busca_mensal.csv"
+    ],
+    "formula": "soma(cliques) por ano_mes",
+    "limitacao": "Exportação sintética; não é Search Console real."
+  },
+  {
+    "evidencia_id": "EVD-006",
+    "afirmacao": "CTR ponderado em 2026-06 foi 3.72%.",
+    "tipo": "fato_observado",
+    "valor": 3.72,
+    "unidade": "pct",
+    "periodo": "2026-06",
+    "fonte": [
+      "outputs/gold/busca_mensal.csv"
+    ],
+    "formula": "100 * soma(cliques) / soma(impressoes)",
+    "limitacao": null
+  },
+  {
+    "evidencia_id": "EVD-007",
+    "afirmacao": "Posição média ponderada em 2026-06 foi 10.06.",
+    "tipo": "fato_observado",
+    "valor": 10.06,
+    "unidade": "posicao",
+    "periodo": "2026-06",
+    "fonte": [
+      "outputs/gold/busca_mensal.csv"
+    ],
+    "formula": "soma(posicao_media * impressoes) / soma(impressoes)",
+    "limitacao": null
+  },
+  {
+    "evidencia_id": "EVD-008",
+    "afirmacao": "Em 2026-06-28, SEO técnico do portal próprio foi 77 e o de concorrente_alpha foi 87.",
+    "tipo": "fato_observado",
+    "valor": 77.0,
+    "unidade": "pontos",
+    "periodo": "2026-06",
+    "fonte": [
+      "outputs/gold/benchmark_sites.csv"
+    ],
+    "formula": "score da mesma data_coleta, sem índice composto",
+    "limitacao": "Auditoria sintética de concorrentes fictícios."
+  },
+  {
+    "evidencia_id": "EVD-009",
+    "afirmacao": "Em 2026-06-28, dados estruturados do portal próprio foram 70% contra 88% de concorrente_alpha.",
+    "tipo": "fato_observado",
+    "valor": 70.0,
+    "unidade": "pct",
+    "periodo": "2026-06",
+    "fonte": [
+      "outputs/gold/benchmark_sites.csv"
+    ],
+    "formula": "dados_estruturados_pct na mesma data",
+    "limitacao": "Amostra de 50 páginas por site."
+  },
+  {
+    "evidencia_id": "EVD-010",
+    "afirmacao": "Em 2026-06, o portal próprio foi citado em 4 de 10 testes (40.00%).",
+    "tipo": "fato_observado",
+    "valor": 40.0,
+    "unidade": "pct",
+    "periodo": "2026-06",
+    "fonte": [
+      "outputs/gold/visibilidade_ia_resumo.csv"
+    ],
+    "formula": "100 * testes_com_dominio / total_testes",
+    "limitacao": "Amostra datada; não é market share universal."
+  },
+  {
+    "evidencia_id": "EVD-011",
+    "afirmacao": "Share observado do portal próprio nas amostras mensais teve média aritmética de 40.00% no semestre.",
+    "tipo": "fato_observado",
+    "valor": 40.0,
+    "unidade": "pct",
+    "periodo": "2026-01 a 2026-06",
+    "fonte": [
+      "outputs/gold/visibilidade_ia_resumo.csv"
+    ],
+    "formula": "média das shares mensais do portal_proprio",
+    "limitacao": "Média de amostras mensais iguais (10 testes/mês); não generalizar."
+  },
+  {
+    "evidencia_id": "EVD-012",
+    "afirmacao": "Entre 24 conteúdos válidos, 83.33% tinham schema_article e 16.67% tinham FAQ.",
+    "tipo": "fato_observado",
+    "valor": 83.33,
+    "unidade": "pct",
+    "periodo": "catalogo_sintetico",
+    "fonte": [
+      "outputs/gold/qualidade_conteudo.csv"
+    ],
+    "formula": "100 * contagem_atributo / conteudos_validos",
+    "limitacao": "Inventário sintético; sem evidência causal com audiência."
+  },
+  {
+    "evidencia_id": "EVD-013",
+    "afirmacao": "A meta de usuários mensais (260000, maior_melhor) não foi atingida em 5 de 6 competências.",
+    "tipo": "fato_observado",
+    "valor": 5,
+    "unidade": "competencias",
+    "periodo": "2026-01 a 2026-06",
+    "fonte": [
+      "outputs/gold/metas_status.csv"
+    ],
+    "formula": "realizado < 260000, direção maior_melhor, vigência 2026-01 a 2026-06",
+    "limitacao": null
+  },
+  {
+    "evidencia_id": "EVD-014",
+    "afirmacao": "A meta de SEO técnico (85 pontos) não foi atingida em 6 de 6 competências.",
+    "tipo": "fato_observado",
+    "valor": 6,
+    "unidade": "competencias",
+    "periodo": "2026-01 a 2026-06",
+    "fonte": [
+      "outputs/gold/metas_status.csv"
+    ],
+    "formula": "realizado < 85, direção maior_melhor",
+    "limitacao": "Score sintético; não é auditoria real."
+  },
+  {
+    "evidencia_id": "EVD-015",
+    "afirmacao": "A meta de rejeição (55%, menor_melhor) foi atingida em 1 de 6 competências.",
+    "tipo": "fato_observado",
+    "valor": 1,
+    "unidade": "competencias",
+    "periodo": "2026-01 a 2026-06",
+    "fonte": [
+      "outputs/gold/metas_status.csv"
+    ],
+    "formula": "realizado <= 55, direção menor_melhor",
+    "limitacao": null
+  }
+]

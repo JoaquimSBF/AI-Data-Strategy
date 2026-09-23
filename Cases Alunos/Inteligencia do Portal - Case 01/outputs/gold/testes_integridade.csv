@@ -1,0 +1,6 @@
+teste,status,detalhe
+gold_nao_vazio,PASS,6 competencias
+mix_fecha_100,PASS,0 divergencias
+sem_pii,PASS,0 colunas proibidas
+metas_respeitam_vigencia,PASS,30 comparacoes
+ia_nao_e_market_share,PASS,limitacao registrada

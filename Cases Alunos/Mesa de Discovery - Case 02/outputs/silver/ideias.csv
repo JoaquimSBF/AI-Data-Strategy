@@ -1,0 +1,4 @@
+ideia_id,origem,texto,status
+I01,R03,Gerar histórias automaticamente a partir das atas.,nova
+I02,R05,"Kanban de aprovação com papéis, não nomes.",nova
+I03,R01,Integrar CRM ao vivo no primeiro sprint.,rejeitada

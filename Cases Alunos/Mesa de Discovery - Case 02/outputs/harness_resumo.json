@@ -1,0 +1,87 @@
+{
+  "profile": {
+    "reunioes": {
+      "antes": 7,
+      "depois": 5,
+      "quarentena": 2,
+      "issues": {
+        "duplicata_exata": 1,
+        "data_nula_ou_invalida": 1
+      }
+    },
+    "evidencias": {
+      "antes": 12,
+      "depois": 11,
+      "quarentena": 1,
+      "issues": {
+        "reuniao_invalida": 1,
+        "texto_adversario": 1,
+        "confiabilidade_invalida": 1
+      }
+    },
+    "stakeholders": {
+      "antes": 5,
+      "depois": 5,
+      "quarentena": 0,
+      "issues": {}
+    },
+    "sistemas": {
+      "antes": 4,
+      "depois": 4,
+      "quarentena": 0,
+      "issues": {}
+    },
+    "restricoes": {
+      "antes": 4,
+      "depois": 4,
+      "quarentena": 0,
+      "issues": {}
+    },
+    "ideias": {
+      "antes": 3,
+      "depois": 3,
+      "quarentena": 0,
+      "issues": {}
+    },
+    "metas": {
+      "antes": 3,
+      "depois": 3,
+      "quarentena": 0,
+      "issues": {}
+    }
+  },
+  "kpis": {
+    "pct_requisitos_com_fonte": "100",
+    "pct_perguntas_abertas": "18.18181818181818181818181818",
+    "requisitos_mvp": "7"
+  },
+  "tests": [
+    {
+      "teste": "requisito_sempre_com_fonte",
+      "status": "PASS",
+      "detalhe": "7 requisitos"
+    },
+    {
+      "teste": "e99_nao_virou_requisito",
+      "status": "PASS",
+      "detalhe": "E99 em quarentena"
+    },
+    {
+      "teste": "ideia_rejeitada_fora",
+      "status": "PASS",
+      "detalhe": "I03 fora de escopo"
+    },
+    {
+      "teste": "sem_pii",
+      "status": "PASS",
+      "detalhe": "apenas papéis"
+    },
+    {
+      "teste": "meta_mvp_nao_completada_com_invencao",
+      "status": "PASS",
+      "detalhe": "7 candidatos"
+    }
+  ],
+  "n_evidencias": 9,
+  "n_ops": 7
+}

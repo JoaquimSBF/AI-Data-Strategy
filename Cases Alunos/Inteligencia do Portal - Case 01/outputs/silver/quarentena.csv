@@ -1,0 +1,6 @@
+tabela,chave,motivo,origem
+audiencia,linha_32,duplicata_exata,linha 32
+audiencia,2026-06|TESTE,editoria_desconhecida|valor_nulo_ou_invalido|valor_negativo,linha 33
+conteudos,ART005,duplicata_exata,linha 26
+conteudos,ART999,data_publicacao_nula_ou_invalida,linha 27
+search_console,2026-06|consulta sem medicao|ART999,medicao_ausente,linha 38
