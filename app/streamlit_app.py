@@ -300,10 +300,11 @@ def generate_with_gemini(question: str, chunks: list[dict]) -> dict | None:
             time.sleep(2 ** attempt)
 
     if last_error is not None:
-        st.warning(
-            "Gemini indisponível no momento (ex.: alta demanda). "
-            "Respondendo com evidência lexical da base."
-        )
+        # Não usar st.warning aqui: esta função roda dentro de st.status no chat.
+        return {
+            "_gemini_fallback": True,
+            "_gemini_error": str(last_error)[:200],
+        }
     return None
 
 
@@ -357,6 +358,14 @@ def ask(question: str, retriever: Retriever) -> dict:
 
     generated = generate_with_gemini(question, chunks)
     if generated is not None:
+        if generated.get("_gemini_fallback"):
+            payload = answer_from_chunks(chunks)
+            payload["resposta"] = (
+                "Gemini indisponível no momento (ex.: alta demanda). "
+                "Resposta com evidência lexical da base:\n\n"
+                + payload["resposta"].split(":\n\n", 1)[-1]
+            )
+            return payload
         return generated
     return answer_from_chunks(chunks)
 
@@ -692,7 +701,21 @@ def handle_prompt(prompt: str, retriever: Retriever) -> None:
     if not clean_prompt:
         return
     st.session_state.messages.append({"role": "user", "content": clean_prompt})
-    payload = ask(clean_prompt, retriever)
+    try:
+        payload = ask(clean_prompt, retriever)
+    except Exception as exc:
+        payload = {
+            "resposta": (
+                "Não consegui montar a resposta agora. "
+                f"Detalhe técnico: {exc}"
+            ),
+            "fontes": [],
+            "confianca": "baixa",
+            "dentro_do_escopo": True,
+            "nao_sei": True,
+            "metodo_recuperacao": "erro",
+            "score_recuperacao": 0.0,
+        }
     st.session_state.messages.append({"role": "assistant", "payload": payload})
 
 
@@ -776,11 +799,13 @@ def main() -> None:
             render_chat_empty_state()
         for message in st.session_state.messages:
             if message["role"] == "assistant":
-                with st.chat_message("assistant", avatar="🤖"):
+                icon_col, body_col = st.columns([0.06, 0.94], gap="small")
+                with icon_col:
+                    st.markdown("### 🤖")
+                with body_col:
                     render_answer(message["payload"])
             else:
-                with st.chat_message("user", avatar="👤"):
-                    render_user_message(message["content"])
+                render_user_message(message["content"])
 
     prompt = None
     used_open_question = False
