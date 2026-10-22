@@ -1,0 +1,39 @@
+{
+  "mcpServers": {
+    "admin-postgres": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": [
+        "postgres-mcp",
+        "--access-mode=restricted"
+      ],
+      "envFile": "${workspaceFolder}/.env",
+      "env": {
+        "DATABASE_URI": "${env:DATABASE_URI}"
+      }
+    },
+    "admin-postgres-docker": {
+      "type": "stdio",
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "DATABASE_URI",
+        "crystaldba/postgres-mcp",
+        "--access-mode=restricted"
+      ],
+      "envFile": "${workspaceFolder}/.env",
+      "env": {
+        "DATABASE_URI": "${env:DATABASE_URI}"
+      }
+    },
+    "hubspot": {
+      "url": "https://mcp.hubspot.com",
+      "headers": {
+        "Authorization": "Bearer ${env:HUBSPOT_TOKEN}"
+      }
+    }
+  }
+}

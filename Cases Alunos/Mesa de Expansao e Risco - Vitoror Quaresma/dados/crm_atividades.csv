@@ -1,0 +1,8 @@
+atividade_id,cliente_id,deal_id,data,tipo,quantidade
+A01,CL01,D01,2026-02-10,call,3
+A02,CL02,D02,05/03/2026,email,1
+A03,CL03,D03,2026/04/12,reuniao,4
+A04,CL04,D04,22-04-2026,call,8
+A05,CL06,D05,2026-01-08,email,2
+A06,CL04,D04,,nota,1
+A99,CL99,D99,2026-06-02,teste,-2

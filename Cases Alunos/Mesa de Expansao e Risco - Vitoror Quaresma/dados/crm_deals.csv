@@ -1,0 +1,10 @@
+deal_id,cliente_id,etapa,status,valor,data_abertura,data_fechamento,atividades
+D01,CL01,closedwon,ganho,48000,2026-01-10,2026-02-20,6
+D02,CL02,Closed Lost,Lost,12000,12/01/2026,2026/03/05,2
+D03,CL03,proposta,aberto,18000,2026-03-01,,9
+D04,CL04,negociacao,Open,90000,18-02-2026,,14
+D05,CL06,closedwon,ganho,8000,2025-11-02,2026-01-15,3
+D06,CL01,qualificacao,aberto,15000,2026-05-02,,4
+D06,CL01,qualificacao,aberto,15000,2026-05-02,,4
+D07,CL07,proposta,aberto,22000,2026-04-10,,1
+D99,CL99,teste,aberto,-10,2026-06-01,,0

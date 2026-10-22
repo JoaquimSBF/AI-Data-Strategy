@@ -1,0 +1,5 @@
+kpi,vigencia_inicio,vigencia_fim,meta,direcao
+alocacao_pct,2026-01,2026-06,70,maior_melhor
+nps,2026-01,2026-06,50,maior_melhor
+mau,2026-01,2026-06,40,maior_melhor
+churn_previsto_pct,,,5,menor_melhor

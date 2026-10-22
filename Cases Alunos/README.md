@@ -1,6 +1,6 @@
 # Cases Alunos — Skills & Go
 
-Pasta completa dos **3 cases** da turma (prompts + dados + outputs + produto HTML).
+Pasta dos cases da turma (prompts + dados + outputs + produto HTML).
 
 ## Cases
 
@@ -9,6 +9,7 @@ Pasta completa dos **3 cases** da turma (prompts + dados + outputs + produto HTM
 | 01 — Inteligência do Portal | `Inteligencia do Portal - Case 01/` |
 | 02 — Mesa de Discovery | `Mesa de Discovery - Case 02/` |
 | 03 — Radar Saúde do Cliente | `Radar Saude do Cliente - Case 03/` |
+| 04 — Mesa de Expansão e Risco | `Mesa de Expansao e Risco - Vitoror Quaresma/` |
 
 ## Estrutura de cada case
 

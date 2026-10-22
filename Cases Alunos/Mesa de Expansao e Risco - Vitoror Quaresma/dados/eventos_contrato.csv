@@ -1,0 +1,7 @@
+evento_id,cliente_id,data,tipo,licencas_antes,licencas_depois
+E01,CL01,2026-03-01,upgrade,100,120
+E02,CL02,01/04/2026,downsell,80,60
+E03,CL03,2026/05/01,upsell,40,50
+E04,CL06,2026-02-01,Downsell,90,70
+E05,CL04,,upgrade,200,220
+E99,CL99,2026-06-01,teste,1,1
